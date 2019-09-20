@@ -1,0 +1,164 @@
+{
+    "standorte": [
+        {
+            "displayName": "Zürich HB",
+            "externalId": "008503000",
+            "type": "STATION",
+            "longitude": 8540188,
+            "latitude": 47378170,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Zürich HB SZU",
+            "externalId": "008503088",
+            "type": "STATION",
+            "longitude": 8539168,
+            "latitude": 47377430,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Zürich, Bahnhofplatz/HB",
+            "externalId": "008587348",
+            "type": "STATION",
+            "longitude": 8539336,
+            "latitude": 47377241,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Zürich, Bahnhofquai/HB",
+            "externalId": "008587349",
+            "type": "STATION",
+            "longitude": 8541741,
+            "latitude": 47377560,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Zürich Landesmuseum (See)",
+            "externalId": "008503446",
+            "type": "STATION",
+            "longitude": 8541715,
+            "latitude": 47378846,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Zürich, Bahnhofstrasse/HB",
+            "externalId": "008591067",
+            "type": "STATION",
+            "longitude": 8539945,
+            "latitude": 47376560,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Zürich, Sihlquai/HB",
+            "externalId": "008591368",
+            "type": "STATION",
+            "longitude": 8537603,
+            "latitude": 47379875,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Zürich, Stampfenbachplatz",
+            "externalId": "008591379",
+            "type": "STATION",
+            "longitude": 8542810,
+            "latitude": 47379960,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Zürich, Central",
+            "externalId": "008588078",
+            "type": "STATION",
+            "longitude": 8543937,
+            "latitude": 47376846,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Zürich, Löwenplatz",
+            "externalId": "008591262",
+            "type": "STATION",
+            "longitude": 8537416,
+            "latitude": 47375892,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Zürich Central (Polybahn)",
+            "externalId": "008503499",
+            "type": "STATION",
+            "longitude": 8544037,
+            "latitude": 47376539,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Zürich, Haldenegg",
+            "externalId": "008591174",
+            "type": "STATION",
+            "longitude": 8544511,
+            "latitude": 47379647,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Zürich, Bus Station",
+            "externalId": "008596126",
+            "type": "STATION",
+            "longitude": 8537297,
+            "latitude": 47381065,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Zürich, Rudolf-Brun-Brücke",
+            "externalId": "008591327",
+            "type": "STATION",
+            "longitude": 8543237,
+            "latitude": 47374352,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Zürich Polyterrasse",
+            "externalId": "008503500",
+            "type": "STATION",
+            "longitude": 8546401,
+            "latitude": 47376858,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Zürich, Sihlpost/HB",
+            "externalId": "008591367",
+            "type": "STATION",
+            "longitude": 8534201,
+            "latitude": 47376093,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Zürich Limmatquai",
+            "externalId": "008530822",
+            "type": "STATION",
+            "longitude": 8542631,
+            "latitude": 47373233,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Zürich, Sonneggstrasse",
+            "externalId": "008591373",
+            "type": "STATION",
+            "longitude": 8543690,
+            "latitude": 47382839,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Zürich, Rennweg",
+            "externalId": "008591316",
+            "type": "STATION",
+            "longitude": 8538456,
+            "latitude": 47373066,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Zürich, Museum für Gestaltung",
+            "externalId": "008591282",
+            "type": "STATION",
+            "longitude": 8534934,
+            "latitude": 47382122,
+            "barriereFreiheit": null
+        }
+    ]
+}

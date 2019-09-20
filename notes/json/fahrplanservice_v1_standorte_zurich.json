@@ -1,0 +1,156 @@
+{
+    "standorte": [
+        {
+            "displayName": "Zürich HB",
+            "externalId": "8503000",
+            "type": "STATION",
+            "longitude": 8540193,
+            "latitude": 47378177,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Zürich Flughafen",
+            "externalId": "8503016",
+            "type": "STATION",
+            "longitude": 8562387,
+            "latitude": 47450379,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Opfikon, BENTLEY Zurich",
+            "externalId": null,
+            "type": "POI",
+            "longitude": 8563286,
+            "latitude": 47425820,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Adliswil, ibis Zurich Adliswil (Hotel)",
+            "externalId": null,
+            "type": "POI",
+            "longitude": 8529343,
+            "latitude": 47326903,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Kloten, Radisson Blu Hotel, Zurich Airport",
+            "externalId": null,
+            "type": "POI",
+            "longitude": 8564014,
+            "latitude": 47452680,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Zürich, Heuried",
+            "externalId": "8591190",
+            "type": "STATION",
+            "longitude": 8506348,
+            "latitude": 47369413,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Zürich, Schönauring",
+            "externalId": "8591342",
+            "type": "STATION",
+            "longitude": 8536345,
+            "latitude": 47426126,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Zürich, Centro di Studi Italiani in Zurigo (Univer",
+            "externalId": null,
+            "type": "POI",
+            "longitude": 8536426,
+            "latitude": 47365862,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "Zürich, Comfort Inn Royal Zurich (Hotel)",
+            "externalId": null,
+            "type": "POI",
+            "longitude": 8545074,
+            "latitude": 47379040,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "1201 Genève, Rue de Zurich 1",
+            "externalId": null,
+            "type": "ADDRESS",
+            "longitude": 6148631,
+            "latitude": 46211054,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "1201 Genève, Rue de Zurich 3",
+            "externalId": null,
+            "type": "ADDRESS",
+            "longitude": 6148478,
+            "latitude": 46211117,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "1201 Genève, Rue de Zurich 4",
+            "externalId": null,
+            "type": "ADDRESS",
+            "longitude": 6148712,
+            "latitude": 46211287,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "1201 Genève, Rue de Zurich 5",
+            "externalId": null,
+            "type": "ADDRESS",
+            "longitude": 6148307,
+            "latitude": 46211135,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "1201 Genève, Rue de Zurich 6",
+            "externalId": null,
+            "type": "ADDRESS",
+            "longitude": 6148532,
+            "latitude": 46211341,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "1201 Genève, Rue de Zurich 7",
+            "externalId": null,
+            "type": "ADDRESS",
+            "longitude": 6148199,
+            "latitude": 46211180,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "1201 Genève, Rue de Zurich 8",
+            "externalId": null,
+            "type": "ADDRESS",
+            "longitude": 6148307,
+            "latitude": 46211422,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "1201 Genève, Rue de Zurich 10",
+            "externalId": null,
+            "type": "ADDRESS",
+            "longitude": 6147965,
+            "latitude": 46211512,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "1201 Genève, Rue de Zurich 12",
+            "externalId": null,
+            "type": "ADDRESS",
+            "longitude": 6147597,
+            "latitude": 46211656,
+            "barriereFreiheit": null
+        },
+        {
+            "displayName": "1201 Genève, Rue de Zurich 15",
+            "externalId": null,
+            "type": "ADDRESS",
+            "longitude": 6147804,
+            "latitude": 46211234,
+            "barriereFreiheit": null
+        }
+    ]
+}

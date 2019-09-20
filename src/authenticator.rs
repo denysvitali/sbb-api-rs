@@ -39,3 +39,12 @@ pub fn retrieve_key(cert_hash: &str, key: &str) -> String {
 pub fn get_key() -> String {
     retrieve_key(&get_certificate_hash(), KEY)
 }
+
+#[test]
+fn url_1(){
+    let date = "2019-09-20";
+    let auth = "T/jxDVIsjL+ByTSYY2oKOtkV7b4=";
+    let path = "/unauth/fahrplanservice/v1/verbindungen/s/Z%25C3%25BCrich%2520HB/s/Bern/ab/2019-09-20/21-14/";
+
+    assert_eq!(auth, get_authorization(path, date));
+}

@@ -2,6 +2,7 @@ extern crate openssl;
 extern crate hex;
 extern crate uuid;
 extern crate chrono;
+extern crate serde;
 
 pub mod authenticator;
 
@@ -12,6 +13,8 @@ use reqwest::header::{HeaderMap, USER_AGENT, HeaderValue, HeaderName};
 use openssl::rand::rand_bytes;
 use std::borrow::{BorrowMut, Borrow};
 use chrono::{DateTime, Local};
+
+mod models;
 
 const API_ENDPOINT : &str = "https://p1.sbbmobile.ch";
 //const API_ENDPOINT: &str = "http://127.0.0.1:3000";

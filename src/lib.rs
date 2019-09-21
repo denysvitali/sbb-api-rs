@@ -2,8 +2,14 @@ extern crate openssl;
 extern crate hex;
 extern crate uuid;
 extern crate chrono;
+
+#[macro_use]
+extern crate more_asserts;
+
+#[macro_use]
 extern crate serde;
 
+use serde::{Deserialize, Serialize};
 pub mod authenticator;
 
 use std::str::FromStr;

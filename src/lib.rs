@@ -22,9 +22,31 @@ use chrono::{DateTime, Local};
 
 mod models;
 
-const API_ENDPOINT : &str = "https://p1.sbbmobile.ch";
+pub const API_ENDPOINT : &str = "https://p1.sbbmobile.ch";
 //const API_ENDPOINT: &str = "http://127.0.0.1:3000";
-const SBB_UA: &str = "SBBmobile/flavorpreviewRelease-9.6.2-RELEASE Android/9 (OnePlus;ONEPLUS A5010)";
+pub const SBB_UA: &str = "SBBmobile/flavorpreviewRelease-9.6.2-RELEASE Android/9 (OnePlus;ONEPLUS A5010)";
+
+pub fn set_headers(headers: &mut HeaderMap, path: &str, date: &str){
+    headers.append(HeaderName::from_str("X-App-Token")
+                       .expect("Unable to parse HeaderName"),
+                   HeaderValue::from_str(&generate_token())
+                       .expect("Unable to parse HeaderValue"),
+    );
+    headers.append(HeaderName::from_str("X-API-AUTHORIZATION")
+                       .expect("Unable to parse HeaderName"),
+                   HeaderValue::from_str(
+                       &authenticator::get_authorization(&path, &date)
+                   )
+                       .expect("Unable to parse HeaderValue"),
+    );
+    headers.append(HeaderName::from_str("X-API-DATE")
+                       .expect("Unable to parse HeaderName"),
+                   HeaderValue::from_str(
+                       &date
+                   )
+                       .expect("Unable to parse HeaderValue"),
+    );
+}
 
 fn make_request(path: &str) -> Result<Response, reqwest::Error> {
     let mut headers = HeaderMap::new();
@@ -51,30 +73,12 @@ fn make_request(path: &str) -> Result<Response, reqwest::Error> {
 
     let mut request = reqwest::Request::new(Method::GET, url);
     let mut headers: &mut HeaderMap = request.headers_mut();
-    headers.append(HeaderName::from_str("X-App-Token")
-                       .expect("Unable to parse HeaderName"),
-                   HeaderValue::from_str(&generate_token())
-                       .expect("Unable to parse HeaderValue"),
-    );
-    headers.append(HeaderName::from_str("X-API-AUTHORIZATION")
-                       .expect("Unable to parse HeaderName"),
-                   HeaderValue::from_str(
-                       &authenticator::get_authorization(&path, &date)
-                   )
-                       .expect("Unable to parse HeaderValue"),
-    );
-    headers.append(HeaderName::from_str("X-API-DATE")
-                       .expect("Unable to parse HeaderName"),
-                   HeaderValue::from_str(
-                       &date
-                        )
-                       .expect("Unable to parse HeaderValue"),
-    );
+    set_headers(headers, &path, &date);
 
     client.execute(request)
 }
 
-fn generate_token() -> String {
+pub fn generate_token() -> String {
     let mut bytes = [0; 16];
     rand_bytes(&mut bytes);
     uuid::builder::Builder::from_slice(&bytes)

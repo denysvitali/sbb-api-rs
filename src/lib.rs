@@ -75,6 +75,8 @@ fn make_request(path: &str) -> Result<Response, reqwest::Error> {
     let mut headers: &mut HeaderMap = request.headers_mut();
     set_headers(headers, &path, &date);
 
+    println!("Request: Headers = {:?}, Path = {}", request.headers(), path);
+
     client.execute(request)
 }
 

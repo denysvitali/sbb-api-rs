@@ -20,7 +20,7 @@ pub fn get_authorization<'a>(path: &str, date: &str) -> String {
 
 pub fn get_certificate_hash() -> String {
     let cert = X509::from_der(
-        &fs::read("./resources/ca_cert.crt").expect("Unable to read CA file")
+        include_bytes!("../resources/ca_cert.crt")
     ).expect("Invalid CA certificate");
 
     let r : DigestBytes = cert.digest(MessageDigest::sha1()).expect("Digest");

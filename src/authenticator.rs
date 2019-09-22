@@ -48,3 +48,8 @@ fn url_1(){
 
     assert_eq!(auth, get_authorization(path, date));
 }
+
+#[test]
+fn test_certificate_hash(){
+    assert_eq!("WdfnzdQugRFUF5b812hZl3lAahM=", get_certificate_hash());
+}

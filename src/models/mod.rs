@@ -3,3 +3,5 @@ mod verbindung;
 mod koordinaten;
 mod transport;
 mod realtime_info;
+mod legend;
+mod ticketing;

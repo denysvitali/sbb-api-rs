@@ -2,8 +2,10 @@ use serde::{Serialize, Deserialize};
 use crate::models::koordinaten::Koordinaten;
 use crate::models::transport::TransportBezeichnung;
 use crate::models::realtime_info::{SectionRealtimeInfo, RealtimeInfo};
+use crate::models::legend::{LegendOccupancy, LegendItem};
+use crate::models::ticketing::TicketingInfo;
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Verbindung {
    #[serde(rename = "abfahrt")]
     pub abfahrt: String,
@@ -54,16 +56,16 @@ pub struct Verbindung {
     pub duration_accessibility: String,
  
    #[serde(rename = "isInternationalVerbindung")]
-    pub is_international_verbindung: String,
+    pub is_international_verbindung: bool,
  
    #[serde(rename = "legendBfrItems")]
-    pub legend_bfr_items: String,
+    pub legend_bfr_items: Vec<String>,
  
    #[serde(rename = "legendItems")]
-    pub legend_items: String,
+    pub legend_items: Vec<LegendItem>,
  
    #[serde(rename = "legendOccupancyItems")]
-    pub legend_occupancy_items: String,
+    pub legend_occupancy_items: Vec<LegendOccupancy>,
  
    #[serde(rename = "realtimeInfo")]
     pub realtime_info: RealtimeInfo,
@@ -72,10 +74,10 @@ pub struct Verbindung {
     pub reconstruction_context: String,
  
    #[serde(rename = "serviceAttributes")]
-    pub service_attributes: String,
+    pub service_attributes: Vec<String>,
  
    #[serde(rename = "ticketingInfo")]
-    pub ticketing_info: String,
+    pub ticketing_info: TicketingInfo,
  
    #[serde(rename = "transfers")]
     pub transfers: i32,
@@ -93,16 +95,16 @@ pub struct Verbindung {
     pub verbindung_sections: Vec<VerbindungSections>,
  
    #[serde(rename = "verkehrstage")]
-    pub verkehrstage: String,
+    pub verkehrstage: Vec<String>,
  
    #[serde(rename = "vias")]
-    pub vias: Option<String>,
+    pub vias: Option<Vec<String>>,
  
    #[serde(rename = "zuschlagspflicht")]
-    pub zuschlagspflicht: String,
+    pub zuschlagspflicht: bool,
 }
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct VerbindungSections {
     #[serde(rename = "abfahrtCancellation")]
     pub abfahrt_cancellation: bool,
@@ -126,7 +128,7 @@ pub struct VerbindungSections {
     pub abfahrt_time: String,
 
     #[serde(rename = "actionUrl")]
-    pub action_url: String,
+    pub action_url: Option<String>,
 
     #[serde(rename = "ankunftCancellation")]
     pub ankunft_cancellation: bool,
@@ -150,7 +152,7 @@ pub struct VerbindungSections {
     pub ankunft_time: String,
 
     #[serde(rename = "arrivalTrackLabel")]
-    pub arrival_track_label: String,
+    pub arrival_track_label: Option<String>,
 
     #[serde(rename = "arrivalTrackLabelAccessibility")]
     pub arrival_track_label_accessibility: String,
@@ -162,16 +164,16 @@ pub struct VerbindungSections {
     pub belegung_zweite: String,
 
     #[serde(rename = "departureTrackLabel")]
-    pub departure_track_label: String,
+    pub departure_track_label: Option<String>,
 
     #[serde(rename = "departureTrackLabelAccessibility")]
     pub departure_track_label_accessibility: String,
 
     #[serde(rename = "durationProzent")]
-    pub duration_prozent: String,
+    pub duration_prozent: Option<String>,
 
     #[serde(rename = "formationUrl")]
-    pub formation_url: String,
+    pub formation_url: Option<String>,
 
     #[serde(rename = "previewType")]
     pub preview_type: String,
@@ -180,10 +182,10 @@ pub struct VerbindungSections {
     pub realtime_info: SectionRealtimeInfo,
 
     #[serde(rename = "transportBezeichnung")]
-    pub transport_bezeichnung: TransportBezeichnung,
+    pub transport_bezeichnung: Option<TransportBezeichnung>,
 
     #[serde(rename = "transportHinweis")]
-    pub transport_hinweis: String,
+    pub transport_hinweis: Option<String>,
 
     #[serde(rename = "transportServiceAttributes")]
     pub transport_service_attributes: Vec<String>,

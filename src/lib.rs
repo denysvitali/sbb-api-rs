@@ -11,6 +11,7 @@ extern crate serde;
 
 use serde::{Deserialize, Serialize};
 pub mod authenticator;
+pub mod connections;
 
 use std::str::FromStr;
 use reqwest::{Certificate, Method, Url, Request, Response};

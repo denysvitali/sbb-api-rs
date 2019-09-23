@@ -1,0 +1,810 @@
+{
+  "verbindungen": [
+    {
+      "verbindungSections": [
+        {
+          "abfahrtTime": "20:00",
+          "abfahrtDatum": "23.09.2019",
+          "abfahrtName": "Zürich HB",
+          "abfahrtGleis": "15",
+          "departureTrackLabelAccessibility": "platform",
+          "departureTrackLabel": "Pl.",
+          "abfahrtKoordinaten": {
+            "longitude": 8540193,
+            "latitude": 47378177
+          },
+          "transportBezeichnung": {
+            "oevIcon": "ZUG",
+            "transportIcon": "",
+            "transportIconSuffix": null,
+            "transportLabel": "NJ",
+            "transportText": "470",
+            "transportName": null,
+            "transportDirection": "Berlin-Lichtenberg",
+            "transportLabelBgColor": null,
+            "transportLabelTextColor": null
+          },
+          "previewType": "NONE",
+          "transportServiceAttributes": [
+            "GP",
+            "RR",
+            "WL",
+            "CC",
+            "VN"
+          ],
+          "transportHinweis": "",
+          "belegungErste": "LOW",
+          "belegungZweite": "LOW",
+          "type": "TRANSPORT",
+          "actionUrl": "v1/zuglauf/349141/0/85/8503000/2019-09-23/20-00?von=Z%C3%BCrich+HB&nach=Basel+SBB",
+          "formationUrl": "v1/trains/~H4sIAAAAAAAAAN1U227aQBD9FWvhrRDtYrs2REiARRNyIRUg2rSKqsUZjIXZRet12ubyR33mqU_0xzoLhABRLspjxMWz47mdmbNzQ_hgqiBOAyk0_NKkQgJWpPslysq0XLJLlNJ9x6OW71IbZQt_lHmuOaNASYEoCKVItcpCHUvxEGf-Zz5r1Fun85k24uFxaz7r5etVVjurfvv3V8XhyDps1L5WfdfBbHbtvOp4tuezj37tpLrKV-NVVvJrK7cGTyGxug3j5bl-2XW9hZeLjuXy0stUde-1iWLj4Nr59pFlUFn5PMvPZ8fBfJbrN3M0F3zKMYqPupFP8a_bCno5ljM2a6Nm5wBVh622kYPjnMN8n9LbjYdr3z8ofnzXnDyf3rLbYok5nuOVXdu5pTlsXwrRBLBnpPL9hlxnEamILEkKKEK0VI65hkiqGE-kfYQugk-WssFgztlkAopU8FQgV6B-8kSDCuSlsVoMjKFVFodG1ZeCVG7IUKoJ1zGoteWq43dryzYPR0-amjbfbWTDSi-QCzhUnQkEQRqgklgUT4wGxABUhDWgZgEDRa24SKdS6eMNeK2g-aN30MfXEEcg0nDEh-i9aMMK9Rmm5EliTTEXoOE4A3UNCb45-IxHVGMszQEpyApkwBVGVjBEjo8gRuWQJyncFdbxOpCCuuKGu1YoJ9MsSaX6vRW409kJXHpN4G4CMI1FZIVcbYX7crITzn1NuEBm4Qi0hkfxguAt8Rqt4Dw4aXYrVmBseQSWkNqayjSNB8l2Z_vtnQwfn85wcYc8GBlOpBqSZHt4D_f-gZAvsXEspbqMBV_w4IYkaKczY-J4e2ZdeB7ySopopfX3lusEPflgyEfK7CJz94u0XCzZPeZXKMXvHkb_YC4HVsLFOBNDfX_1ogQXInoxl6wO9bHOEMxSt9HEQ54hSzUg0XE3xSlyX2DHXsCG-_MFXIjAY2wLl7dXpo5bYpu4luU-Uf3j2jcrX6_SVwxiddefKxg3sEP9nYLNhnb8ZwremYtr78zlHor_GItPDM8GMJSgLkHhzknri1GfNc36uFpuufdFO4Sz3MjvZ4Zv6dbzGXEB_Qe0U3QY1QgAAA%3D%3D/formation?tnr=349141&cicle=0&puic=85&abDatum=2019-09-23",
+          "durationProzent": "100",
+          "ankunftTime": "20:53",
+          "ankunftDatum": "23.09.2019",
+          "ankunftName": "Basel SBB",
+          "ankunftGleis": "8",
+          "arrivalTrackLabelAccessibility": "platform",
+          "arrivalTrackLabel": "Pl.",
+          "ankunftKoordinaten": {
+            "longitude": 7589548,
+            "latitude": 47547408
+          },
+          "realtimeInfo": {
+            "abfahrtIstZeit": "20:00",
+            "abfahrtIstDatum": "23.09.2019",
+            "ankunftIstZeit": "20:53",
+            "ankunftIstDatum": "23.09.2019",
+            "abfahrtPlatformChange": false,
+            "ankunftPlatformChange": false,
+            "abfahrtCancellation": false,
+            "ankunftCancellation": false,
+            "abfahrtDelayUndefined": false,
+            "ankunftDelayUndefined": false
+          },
+          "abfahrtPlatformChange": false,
+          "ankunftPlatformChange": false,
+          "abfahrtCancellation": false,
+          "ankunftCancellation": false
+        }
+      ],
+      "abfahrt": "Zürich HB",
+      "ankunft": "Basel SBB",
+      "vias": null,
+      "transfers": 0,
+      "duration": "53 min",
+      "durationAccessibility": "53 minutes",
+      "abfahrtTime": "20:00",
+      "abfahrtDate": "23.09.2019",
+      "ankunftTime": "20:53",
+      "ankunftDate": "23.09.2019",
+      "abfahrtGleis": "15",
+      "departureTrackLabelAccessibility": "platform",
+      "departureTrackLabel": "Pl.",
+      "realtimeInfo": {
+        "icon": null,
+        "detailMsg": null,
+        "cancellationMsg": null,
+        "platformChange": null,
+        "nextAlternative": null,
+        "alternativeMsg": null,
+        "isAlternative": false,
+        "abfahrtIstZeit": "20:00",
+        "abfahrtIstDatum": "23.09.2019",
+        "ankunftIstZeit": "20:53",
+        "ankunftIstDatum": "23.09.2019"
+      },
+      "belegungErste": "LOW",
+      "belegungZweite": "LOW",
+      "transportBezeichnung": {
+        "oevIcon": "ZUG",
+        "transportIcon": "",
+        "transportIconSuffix": null,
+        "transportLabel": "NJ",
+        "transportText": "470",
+        "transportName": null,
+        "transportDirection": "Berlin-Lichtenberg",
+        "transportLabelBgColor": null,
+        "transportLabelTextColor": null
+      },
+      "legendOccupancyItems": [
+        {
+          "code": "belegung_low",
+          "description": "low to medium occupancy",
+          "actions": []
+        },
+        {
+          "code": "belegung_high",
+          "description": "high occupancy",
+          "actions": []
+        },
+        {
+          "code": "belegung_veryhigh",
+          "description": "very high occupancy",
+          "actions": []
+        }
+      ],
+      "legendBfrItems": [],
+      "legendItems": [
+        {
+          "code": "GP",
+          "description": "Overall price",
+          "actions": []
+        },
+        {
+          "code": "RR",
+          "description": "Reservation compulsory",
+          "actions": []
+        },
+        {
+          "code": "WL",
+          "description": "Sleeping car",
+          "actions": []
+        },
+        {
+          "code": "CC",
+          "description": "Couchette car",
+          "actions": []
+        },
+        {
+          "code": "VN",
+          "description": "BICYCLES: Carriage not possible",
+          "actions": []
+        }
+      ],
+      "verkehrstage": [],
+      "serviceAttributes": [
+        "RR"
+      ],
+      "verbindungId": "C1-0%3B201909232000%3B470+8503000+0000175+8500010",
+      "isInternationalVerbindung": false,
+      "zuschlagspflicht": false,
+      "angeboteUrl": "v0/verbindungsAngebote",
+      "dayDifference": "",
+      "dayDifferenceAccessibility": "",
+      "reconstructionContext": "~H4sIAAAAAAAAAN1U227aQBD9FWvhrRDtYrs2REiARRNyIRUg2rSKqsUZjIXZRet12ubyR33mqU_0xzoLhABRLspjxMWz47mdmbNzQ_hgqiBOAyk0_NKkQgJWpPslysq0XLJLlNJ9x6OW71IbZQt_lHmuOaNASYEoCKVItcpCHUvxEGf-Zz5r1Fun85k24uFxaz7r5etVVjurfvv3V8XhyDps1L5WfdfBbHbtvOp4tuezj37tpLrKV-NVVvJrK7cGTyGxug3j5bl-2XW9hZeLjuXy0stUde-1iWLj4Nr59pFlUFn5PMvPZ8fBfJbrN3M0F3zKMYqPupFP8a_bCno5ljM2a6Nm5wBVh622kYPjnMN8n9LbjYdr3z8ofnzXnDyf3rLbYok5nuOVXdu5pTlsXwrRBLBnpPL9hlxnEamILEkKKEK0VI65hkiqGE-kfYQugk-WssFgztlkAopU8FQgV6B-8kSDCuSlsVoMjKFVFodG1ZeCVG7IUKoJ1zGoteWq43dryzYPR0-amjbfbWTDSi-QCzhUnQkEQRqgklgUT4wGxABUhDWgZgEDRa24SKdS6eMNeK2g-aN30MfXEEcg0nDEh-i9aMMK9Rmm5EliTTEXoOE4A3UNCb45-IxHVGMszQEpyApkwBVGVjBEjo8gRuWQJyncFdbxOpCCuuKGu1YoJ9MsSaX6vRW409kJXHpN4G4CMI1FZIVcbYX7crITzn1NuEBm4Qi0hkfxguAt8Rqt4Dw4aXYrVmBseQSWkNqayjSNB8l2Z_vtnQwfn85wcYc8GBlOpBqSZHt4D_f-gZAvsXEspbqMBV_w4IYkaKczY-J4e2ZdeB7ySopopfX3lusEPflgyEfK7CJz94u0XCzZPeZXKMXvHkb_YC4HVsLFOBNDfX_1ogQXInoxl6wO9bHOEMxSt9HEQ54hSzUg0XE3xSlyX2DHXsCG-_MFXIjAY2wLl7dXpo5bYpu4luU-Uf3j2jcrX6_SVwxiddefKxg3sEP9nYLNhnb8ZwremYtr78zlHor_GItPDM8GMJSgLkHhzknri1GfNc36uFpuufdFO4Sz3MjvZ4Zv6dbzGXEB_Qe0U3QY1QgAAA==",
+      "verbindungAbpreisContext": "QzEtMDsyMDE5MDkyMzIwMDA7NDcwIDg1MDMwMDAgMDAwMDE3NSA4NTAwMDEw",
+      "ticketingInfo": {
+        "dialogTitle": "Ticket purchase not available",
+        "dialogMessage": "You have selected a connection that is in the past. Please choose another connection.",
+        "buttonText": "Ticket purchase not available",
+        "isAvailable": false
+      }
+    },
+    {
+      "verbindungSections": [
+        {
+          "abfahrtTime": "20:08",
+          "abfahrtDatum": "23.09.2019",
+          "abfahrtName": "Zürich HB",
+          "abfahrtGleis": "16",
+          "departureTrackLabelAccessibility": "platform",
+          "departureTrackLabel": "Pl.",
+          "abfahrtKoordinaten": {
+            "longitude": 8540193,
+            "latitude": 47378177
+          },
+          "transportBezeichnung": {
+            "oevIcon": "ZUG",
+            "transportIcon": "IR",
+            "transportIconSuffix": "37",
+            "transportLabel": "",
+            "transportText": "2282",
+            "transportName": null,
+            "transportDirection": "Basel SBB",
+            "transportLabelBgColor": null,
+            "transportLabelTextColor": null
+          },
+          "previewType": "NONE",
+          "transportServiceAttributes": [
+            "PA"
+          ],
+          "transportHinweis": "",
+          "belegungErste": "LOW",
+          "belegungZweite": "LOW",
+          "type": "TRANSPORT",
+          "actionUrl": "v1/zuglauf/25978/0/85/8503000/2019-09-23/20-08?von=Z%C3%BCrich+HB&nach=Basel+SBB",
+          "formationUrl": "v1/trains/~H4sIAAAAAAAAAN2VS28aMRCA_woy3EoivxZ7iZAgKG1QXlUSRX0oB0MMrFi8kdebVkn4Rz1z6on-sY7ZDSGkBJRjxQp7ZmfW882M7QekurdWR2k7MU7_dKiO2mSH7FFMQhxSRjGWe5RKWpIBZhhjP1JCwmJkfsSY1oqxkAlGVWR1LzGps1nPRYl5XmD2azbdb3VOZlPnp4dHndn0stJqkOZZ49uf3zbqDUuH-80vDRlwCIM1vza4YEKSmmweN4o4mqpBqGwWbvsq1XHpYt97iUCGQSDmXgE4hmHu5aN68lrGexYAp9I5LzFRKpUqFVKZTY_as2n56qCMy-2PZYJhaPn5CfxddNqXZVL2Ngujg_NPoDrsnPp5-6jMiZRYPi4Ngj0NGH6kFuQvySN93KGECy7CgPFHXIb8pXow1pA0VP_-gO6zAaqbLI6rMNWDXDlSTg8SG4GEOufgYtQ4n3sIXzavy8ZjbVHdi1V0p-0PFTtt28mNN8U-LwTMsqjnVVeJQfUH1E_sWLlI24VlkffJwvJU9YZrTX2yJ0urQbjX0BFQWpcZIEGLisHScWTmCEyA4Kwy6W1i3dEqnI4G2qS9oeo7beb8Be5nZRKrxqrUS3xMVTTKtL3XsX_VAvHWRvAdpzR0H6-irrLwVav70PdDHYGyr-JUT64nEOLQh5s6Hccv13huzOdcbUrUKEnsTWTUPNwHFIOdy7wJF7u-n4UA9sQMCq3czfsdPFW3r4bWbxbfnDs43KHsksg6hgfvwtc_-LpBJMqMMtN3T60xiGErgxepoUJojVwGMLluUl3wHGtz383sYAsav9030YRgw1doiMBMiDdo6FqaVUOxYvjEyV5jsmXKlrIq2w6RbUZkQbCCiANCA_IGIqtticiCNYj8NSJfRryI0jTv-k2Q_pjeAMlrVHD5AlLsSkIxpW9ABquxr4MM-DvreBzBnlTxdpCbKskl54FYgRQMyrseMqxjshXkPwy3hVw-Ejdjkk0nDNx9HK_W0t-NXC5j5gfHOhjC1sCI1zAC-QO0q_uJtjfawjmftuaJPDu4Auu7_Gb5v85TwMlvwf-nhu_J1tsrws36F4Cct1hoCgAA/formation?tnr=25978&cicle=0&puic=85&abDatum=2019-09-23",
+          "durationProzent": "100",
+          "ankunftTime": "21:13",
+          "ankunftDatum": "23.09.2019",
+          "ankunftName": "Basel SBB",
+          "ankunftGleis": "7",
+          "arrivalTrackLabelAccessibility": "platform",
+          "arrivalTrackLabel": "Pl.",
+          "ankunftKoordinaten": {
+            "longitude": 7589548,
+            "latitude": 47547408
+          },
+          "realtimeInfo": {
+            "abfahrtIstZeit": "20:08",
+            "abfahrtIstDatum": "23.09.2019",
+            "ankunftIstZeit": "21:13",
+            "ankunftIstDatum": "23.09.2019",
+            "abfahrtPlatformChange": false,
+            "ankunftPlatformChange": false,
+            "abfahrtCancellation": false,
+            "ankunftCancellation": false,
+            "abfahrtDelayUndefined": false,
+            "ankunftDelayUndefined": false
+          },
+          "abfahrtPlatformChange": false,
+          "ankunftPlatformChange": false,
+          "abfahrtCancellation": false,
+          "ankunftCancellation": false
+        }
+      ],
+      "abfahrt": "Zürich HB",
+      "ankunft": "Basel SBB",
+      "vias": null,
+      "transfers": 0,
+      "duration": "1 h 5 min",
+      "durationAccessibility": "1 hours and 5 minutes",
+      "abfahrtTime": "20:08",
+      "abfahrtDate": "23.09.2019",
+      "ankunftTime": "21:13",
+      "ankunftDate": "23.09.2019",
+      "abfahrtGleis": "16",
+      "departureTrackLabelAccessibility": "platform",
+      "departureTrackLabel": "Pl.",
+      "realtimeInfo": {
+        "icon": null,
+        "detailMsg": null,
+        "cancellationMsg": null,
+        "platformChange": null,
+        "nextAlternative": null,
+        "alternativeMsg": null,
+        "isAlternative": false,
+        "abfahrtIstZeit": "20:08",
+        "abfahrtIstDatum": "23.09.2019",
+        "ankunftIstZeit": "21:13",
+        "ankunftIstDatum": "23.09.2019"
+      },
+      "belegungErste": "LOW",
+      "belegungZweite": "LOW",
+      "transportBezeichnung": {
+        "oevIcon": "ZUG",
+        "transportIcon": "IR",
+        "transportIconSuffix": "37",
+        "transportLabel": "",
+        "transportText": "2282",
+        "transportName": null,
+        "transportDirection": "Basel SBB",
+        "transportLabelBgColor": null,
+        "transportLabelTextColor": null
+      },
+      "legendOccupancyItems": [
+        {
+          "code": "belegung_low",
+          "description": "low to medium occupancy",
+          "actions": []
+        },
+        {
+          "code": "belegung_high",
+          "description": "high occupancy",
+          "actions": []
+        },
+        {
+          "code": "belegung_veryhigh",
+          "description": "very high occupancy",
+          "actions": []
+        }
+      ],
+      "legendBfrItems": [],
+      "legendItems": [
+        {
+          "code": "PA",
+          "description": "Panorama coach",
+          "actions": []
+        }
+      ],
+      "verkehrstage": [],
+      "serviceAttributes": [],
+      "verbindungId": "C1-1%3B201909232008%3B2282+8503000+8502119+8502113+8500026+8500023+8500010",
+      "isInternationalVerbindung": false,
+      "zuschlagspflicht": false,
+      "angeboteUrl": "v0/verbindungsAngebote",
+      "dayDifference": "",
+      "dayDifferenceAccessibility": "",
+      "reconstructionContext": "~H4sIAAAAAAAAAN2VS28aMRCA_woy3EoivxZ7iZAgKG1QXlUSRX0oB0MMrFi8kdebVkn4Rz1z6on-sY7ZDSGkBJRjxQp7ZmfW882M7QekurdWR2k7MU7_dKiO2mSH7FFMQhxSRjGWe5RKWpIBZhhjP1JCwmJkfsSY1oqxkAlGVWR1LzGps1nPRYl5XmD2azbdb3VOZlPnp4dHndn0stJqkOZZ49uf3zbqDUuH-80vDRlwCIM1vza4YEKSmmweN4o4mqpBqGwWbvsq1XHpYt97iUCGQSDmXgE4hmHu5aN68lrGexYAp9I5LzFRKpUqFVKZTY_as2n56qCMy-2PZYJhaPn5CfxddNqXZVL2Ngujg_NPoDrsnPp5-6jMiZRYPi4Ngj0NGH6kFuQvySN93KGECy7CgPFHXIb8pXow1pA0VP_-gO6zAaqbLI6rMNWDXDlSTg8SG4GEOufgYtQ4n3sIXzavy8ZjbVHdi1V0p-0PFTtt28mNN8U-LwTMsqjnVVeJQfUH1E_sWLlI24VlkffJwvJU9YZrTX2yJ0urQbjX0BFQWpcZIEGLisHScWTmCEyA4Kwy6W1i3dEqnI4G2qS9oeo7beb8Be5nZRKrxqrUS3xMVTTKtL3XsX_VAvHWRvAdpzR0H6-irrLwVav70PdDHYGyr-JUT64nEOLQh5s6Hccv13huzOdcbUrUKEnsTWTUPNwHFIOdy7wJF7u-n4UA9sQMCq3czfsdPFW3r4bWbxbfnDs43KHsksg6hgfvwtc_-LpBJMqMMtN3T60xiGErgxepoUJojVwGMLluUl3wHGtz383sYAsav9030YRgw1doiMBMiDdo6FqaVUOxYvjEyV5jsmXKlrIq2w6RbUZkQbCCiANCA_IGIqtticiCNYj8NSJfRryI0jTv-k2Q_pjeAMlrVHD5AlLsSkIxpW9ABquxr4MM-DvreBzBnlTxdpCbKskl54FYgRQMyrseMqxjshXkPwy3hVw-Ejdjkk0nDNx9HK_W0t-NXC5j5gfHOhjC1sCI1zAC-QO0q_uJtjfawjmftuaJPDu4Auu7_Gb5v85TwMlvwf-nhu_J1tsrws36F4Cct1hoCgAA",
+      "verbindungAbpreisContext": "QzEtMTsyMDE5MDkyMzIwMDg7MjI4MiA4NTAzMDAwIDg1MDIxMTkgODUwMjExMyA4NTAwMDI2IDg1MDAwMjMgODUwMDAxMA==",
+      "ticketingInfo": {
+        "dialogTitle": "Ticket purchase not available",
+        "dialogMessage": "You have selected a connection that is in the past. Please choose another connection.",
+        "buttonText": "Ticket purchase not available",
+        "isAvailable": false
+      }
+    },
+    {
+      "verbindungSections": [
+        {
+          "abfahrtTime": "20:10",
+          "abfahrtDatum": "23.09.2019",
+          "abfahrtName": "Zürich HB",
+          "abfahrtGleis": "31",
+          "departureTrackLabelAccessibility": "platform",
+          "departureTrackLabel": "Pl.",
+          "abfahrtKoordinaten": {
+            "longitude": 8540193,
+            "latitude": 47378177
+          },
+          "transportBezeichnung": {
+            "oevIcon": "ZUG",
+            "transportIcon": "IR",
+            "transportIconSuffix": "36",
+            "transportLabel": "",
+            "transportText": "2086",
+            "transportName": null,
+            "transportDirection": "Basel SBB",
+            "transportLabelBgColor": null,
+            "transportLabelTextColor": null
+          },
+          "previewType": "NONE",
+          "transportServiceAttributes": [],
+          "transportHinweis": "",
+          "belegungErste": "LOW",
+          "belegungZweite": "LOW",
+          "type": "TRANSPORT",
+          "actionUrl": "v1/zuglauf/25902/1/85/8503000/2019-09-23/20-10?von=Z%C3%BCrich+HB&nach=Basel+SBB",
+          "formationUrl": "v1/trains/~H4sIAAAAAAAAAN2WW2_aMBTHvwoKvK2tbMeOHSYkLusFdW2ltqp2UR9SakJESCrjdNMo32jPPO2JfbEdJ9waCon2WCFxbOdvx79zjn0ysbyHJyWDcSeOtPyprbrVwYfkI0HYRS6xwSLoCKciGLIRQguLU8uQWFhqLDxwF5YtbKoDObIOLCV7cTTWKunpII7WL5z_ns_are7FfKZN8-y8O5_d1loN3LxqfPv7RwW9QeWs3fzSEIzCtuzm1wblNhfYEc3PjcW-ml4DE9FcTGt7YxlWbtpmFmfCZYynsxhMdN1sltnVctYm7rqDCa11ryu2U6lUajVcm8_OO_NZ9e64iqqdkypGYFqmfQF_N93ObRVXjWYlOr4-haGz7qVpd86rFAuB0cuGEXRpEPyww9Iucl_sl0OCKafcZTY8rIL_xtIfSXCaVf8-sX4lvlWPkjA8gKb0s8Ghp6UfqwB6VvcapkTeKGsbCBNGM5aMRlJZddM9sJ6l-uGFWqpO_GikyPgFgywJemboLo6s-sTqx2rk6UCqlXLh9-lKeen1BjulxtnTjbfBdu8hIyC0OomAxFpFDF4dBlGKYJvtauVF46dY6fM8nAx8GY17A6-vZWQWnMKSA7P8WMswTMcmSxesE2nNVgQ2jGP1GEReuvzECkGnEyOh_MjkH-ew1zjyF6PiKMtPmOk99L2BMsltkukQuYfEvsWijlEdoSNY_YPxM-zEi4ZJ1NfLUPohHEVDbiKQdlpDnQBMNjY92OJphRpotdliKS5cxOViKnCOiwrh2s4-LmcXV17IcsIlMd8G5pu8nwKpg2FcihKupQJKihjnNE-JqOuIPZTELklJ8A5KZ5vS2aRse4_lAgk3bhEidyjJEdqIO-6-ONqkJKGdT-RV5r6RuK8IVeL7ldZpCUhTToogBRIsTwkXmyD7TiHNh2cX5ZZwSUm2Kckm5QmczWE5RFaAyBC3qZ1DRBhCSfcgMl4ScUtYNpDXAxlEfRmWS1jzKVAEyjDBr28efsRdghnbCeruuVGLhEtQug1KX5_JdWUqxMzK3F5MKOpI5DDNJwp9dfVk9WAXDKE7YPAbNDBmKuOD7MdSPUoFBXfcSl15dXwH8uesxL-vQgk42efIe4ri__hr_zun99N_xvcAkwMMAAA%3D/formation?tnr=25902&cicle=1&puic=85&abDatum=2019-09-23",
+          "durationProzent": "100",
+          "ankunftTime": "21:24",
+          "ankunftDatum": "23.09.2019",
+          "ankunftName": "Basel SBB",
+          "ankunftGleis": "14",
+          "arrivalTrackLabelAccessibility": "platform",
+          "arrivalTrackLabel": "Pl.",
+          "ankunftKoordinaten": {
+            "longitude": 7589548,
+            "latitude": 47547408
+          },
+          "realtimeInfo": {
+            "abfahrtIstZeit": "20:10",
+            "abfahrtIstDatum": "23.09.2019",
+            "ankunftIstZeit": "21:24",
+            "ankunftIstDatum": "23.09.2019",
+            "abfahrtPlatformChange": false,
+            "ankunftPlatformChange": false,
+            "abfahrtCancellation": false,
+            "ankunftCancellation": false,
+            "abfahrtDelayUndefined": false,
+            "ankunftDelayUndefined": false
+          },
+          "abfahrtPlatformChange": false,
+          "ankunftPlatformChange": false,
+          "abfahrtCancellation": false,
+          "ankunftCancellation": false
+        }
+      ],
+      "abfahrt": "Zürich HB",
+      "ankunft": "Basel SBB",
+      "vias": null,
+      "transfers": 0,
+      "duration": "1 h 14 min",
+      "durationAccessibility": "1 hours and 14 minutes",
+      "abfahrtTime": "20:10",
+      "abfahrtDate": "23.09.2019",
+      "ankunftTime": "21:24",
+      "ankunftDate": "23.09.2019",
+      "abfahrtGleis": "31",
+      "departureTrackLabelAccessibility": "platform",
+      "departureTrackLabel": "Pl.",
+      "realtimeInfo": {
+        "icon": null,
+        "detailMsg": null,
+        "cancellationMsg": null,
+        "platformChange": null,
+        "nextAlternative": null,
+        "alternativeMsg": null,
+        "isAlternative": false,
+        "abfahrtIstZeit": "20:10",
+        "abfahrtIstDatum": "23.09.2019",
+        "ankunftIstZeit": "21:24",
+        "ankunftIstDatum": "23.09.2019"
+      },
+      "belegungErste": "LOW",
+      "belegungZweite": "LOW",
+      "transportBezeichnung": {
+        "oevIcon": "ZUG",
+        "transportIcon": "IR",
+        "transportIconSuffix": "36",
+        "transportLabel": "",
+        "transportText": "2086",
+        "transportName": null,
+        "transportDirection": "Basel SBB",
+        "transportLabelBgColor": null,
+        "transportLabelTextColor": null
+      },
+      "legendOccupancyItems": [
+        {
+          "code": "belegung_low",
+          "description": "low to medium occupancy",
+          "actions": []
+        },
+        {
+          "code": "belegung_high",
+          "description": "high occupancy",
+          "actions": []
+        },
+        {
+          "code": "belegung_veryhigh",
+          "description": "very high occupancy",
+          "actions": []
+        }
+      ],
+      "legendBfrItems": [],
+      "legendItems": [],
+      "verkehrstage": [],
+      "serviceAttributes": [],
+      "verbindungId": "C1-2%3B201909232010%3B2086+8503000+8503001+8503508+8503504+8500309+8500305+8500301+8500010",
+      "isInternationalVerbindung": false,
+      "zuschlagspflicht": false,
+      "angeboteUrl": "v0/verbindungsAngebote",
+      "dayDifference": "",
+      "dayDifferenceAccessibility": "",
+      "reconstructionContext": "~H4sIAAAAAAAAAN2WW2_aMBTHvwoKvK2tbMeOHSYkLusFdW2ltqp2UR9SakJESCrjdNMo32jPPO2JfbEdJ9waCon2WCFxbOdvx79zjn0ysbyHJyWDcSeOtPyprbrVwYfkI0HYRS6xwSLoCKciGLIRQguLU8uQWFhqLDxwF5YtbKoDObIOLCV7cTTWKunpII7WL5z_ns_are7FfKZN8-y8O5_d1loN3LxqfPv7RwW9QeWs3fzSEIzCtuzm1wblNhfYEc3PjcW-ml4DE9FcTGt7YxlWbtpmFmfCZYynsxhMdN1sltnVctYm7rqDCa11ryu2U6lUajVcm8_OO_NZ9e64iqqdkypGYFqmfQF_N93ObRVXjWYlOr4-haGz7qVpd86rFAuB0cuGEXRpEPyww9Iucl_sl0OCKafcZTY8rIL_xtIfSXCaVf8-sX4lvlWPkjA8gKb0s8Ghp6UfqwB6VvcapkTeKGsbCBNGM5aMRlJZddM9sJ6l-uGFWqpO_GikyPgFgywJemboLo6s-sTqx2rk6UCqlXLh9-lKeen1BjulxtnTjbfBdu8hIyC0OomAxFpFDF4dBlGKYJvtauVF46dY6fM8nAx8GY17A6-vZWQWnMKSA7P8WMswTMcmSxesE2nNVgQ2jGP1GEReuvzECkGnEyOh_MjkH-ew1zjyF6PiKMtPmOk99L2BMsltkukQuYfEvsWijlEdoSNY_YPxM-zEi4ZJ1NfLUPohHEVDbiKQdlpDnQBMNjY92OJphRpotdliKS5cxOViKnCOiwrh2s4-LmcXV17IcsIlMd8G5pu8nwKpg2FcihKupQJKihjnNE-JqOuIPZTELklJ8A5KZ5vS2aRse4_lAgk3bhEidyjJEdqIO-6-ONqkJKGdT-RV5r6RuK8IVeL7ldZpCUhTToogBRIsTwkXmyD7TiHNh2cX5ZZwSUm2Kckm5QmczWE5RFaAyBC3qZ1DRBhCSfcgMl4ScUtYNpDXAxlEfRmWS1jzKVAEyjDBr28efsRdghnbCeruuVGLhEtQug1KX5_JdWUqxMzK3F5MKOpI5DDNJwp9dfVk9WAXDKE7YPAbNDBmKuOD7MdSPUoFBXfcSl15dXwH8uesxL-vQgk42efIe4ri__hr_zun99N_xvcAkwMMAAA=",
+      "verbindungAbpreisContext": "QzEtMjsyMDE5MDkyMzIwMTA7MjA4NiA4NTAzMDAwIDg1MDMwMDEgODUwMzUwOCA4NTAzNTA0IDg1MDAzMDkgODUwMDMwNSA4NTAwMzAxIDg1MDAwMTA=",
+      "ticketingInfo": {
+        "dialogTitle": "Ticket purchase not available",
+        "dialogMessage": "You have selected a connection that is in the past. Please choose another connection.",
+        "buttonText": "Ticket purchase not available",
+        "isAvailable": false
+      }
+    },
+    {
+      "verbindungSections": [
+        {
+          "abfahrtTime": "20:34",
+          "abfahrtDatum": "23.09.2019",
+          "abfahrtName": "Zürich HB",
+          "abfahrtGleis": "11",
+          "departureTrackLabelAccessibility": "platform",
+          "departureTrackLabel": "Pl.",
+          "abfahrtKoordinaten": {
+            "longitude": 8540193,
+            "latitude": 47378177
+          },
+          "transportBezeichnung": {
+            "oevIcon": "ZUG",
+            "transportIcon": "IC",
+            "transportIconSuffix": "3",
+            "transportLabel": "",
+            "transportText": "584",
+            "transportName": null,
+            "transportDirection": "Basel SBB",
+            "transportLabelBgColor": null,
+            "transportLabelTextColor": null
+          },
+          "previewType": "NONE",
+          "transportServiceAttributes": [
+            "WS",
+            "FA",
+            "BZ",
+            "RZ",
+            "R"
+          ],
+          "transportHinweis": "",
+          "belegungErste": "LOW",
+          "belegungZweite": "LOW",
+          "type": "TRANSPORT",
+          "actionUrl": "v1/zuglauf/25405/1/85/8503000/2019-09-23/20-34?von=Z%C3%BCrich+HB&nach=Basel+SBB",
+          "formationUrl": "v1/trains/~H4sIAAAAAAAAAN1U224aMRD9lZXhrYDsvXS9VEjAKmlQmlZNovSmqjJkAIvFi2xv0ubyR33mqU_0xzpeCIFUCVUeCwLbo5njOZ4zc01Ef6ZBmjRXFr5b0iQpqwevfMoSmviBT4PwVcRDj0c0oJR6-KMsjtwZN5TUiIZBrozVxcDKXN3jLH4u5t1O72gxt257cNhbzE-rnRZrv2t9_v1Ly8HYO-i2P7Z4FOJtQftTK4yDmLOXvP2mtbqvLVrM5-1VWFcYyLyTrouKI55EUVxGRRiYJMsol9Vd1CaL-wPz42ov9QIPP9Uqqy7mh-liXjnbq9BKul9hFJeO2x_h30kvPa2wivNZO-0dv0bTQe-t26eHlZBxHoQ3GwuP7xaK36g8MHYT3tR9FsZhnEToSCv4egZGU8AnI80v1-SqGJGmKrKshlsYLY0TYWGUa4kn0ksxRInpco8UsDTOUkynoEkTTzVyAfpSZBZ0mp87v7JiDL0KOXCms1yR5jUZ5noqrAS99lw9-e3a860YjB91de98u3Eb5voVxYBVtYVCGmRdLLw6k6rMP8C91UKZWa7t4Raxb3uOG8gRKDMYi6EFVdJfse1KlFiOHpMC9BVkaPpwgseZlghhBaDk_BrpC42AGoao6TFINA5FZuC2tgbaF1OZ_fDSHMl5l9KOvVkmfnhCg9hC3-88QA__Bb1bGKnAGO8qV-BJ5TFjvUEmjNkC735-Dvj7QoLdgXz8LORjMKAvhGtgb5YbI_sZbMM-QOWPo369RR2MnSaMhSzbLuN9498LcpcaJ3muz6USpSKuSYZ-tnAuYdxw8yKOUWC5Gq2svLGcJxgp-kMx1m4Yueav06TuB6eMN4OwSWkD0V-45sBMhJoUamjvmm-U4UTEqLJtykNnYgsks7RtPNyBKFCvFqSqo95Ro4VS-GA7uOEA3cELGcSMbfGKGwkNI59t8lqm-0j2f-e-mflme-4qxKrXn0oYR3BI-YOE3YgO-RMJb9Ulafrxg7rcUeF_c-HE6awPwxz0OWicOaZTlvrd3hl6Xyyn3P8lO6SznMj_Tw2f81pP34gD6A_qzi_G1ggAAA%3D%3D/formation?tnr=25405&cicle=1&puic=85&abDatum=2019-09-23",
+          "durationProzent": "100",
+          "ankunftTime": "21:27",
+          "ankunftDatum": "23.09.2019",
+          "ankunftName": "Basel SBB",
+          "ankunftGleis": "8",
+          "arrivalTrackLabelAccessibility": "platform",
+          "arrivalTrackLabel": "Pl.",
+          "ankunftKoordinaten": {
+            "longitude": 7589548,
+            "latitude": 47547408
+          },
+          "realtimeInfo": {
+            "abfahrtIstZeit": "20:34",
+            "abfahrtIstDatum": "23.09.2019",
+            "ankunftIstZeit": "21:27",
+            "ankunftIstDatum": "23.09.2019",
+            "abfahrtPlatformChange": false,
+            "ankunftPlatformChange": false,
+            "abfahrtCancellation": false,
+            "ankunftCancellation": false,
+            "abfahrtDelayUndefined": false,
+            "ankunftDelayUndefined": false
+          },
+          "abfahrtPlatformChange": false,
+          "ankunftPlatformChange": false,
+          "abfahrtCancellation": false,
+          "ankunftCancellation": false
+        }
+      ],
+      "abfahrt": "Zürich HB",
+      "ankunft": "Basel SBB",
+      "vias": null,
+      "transfers": 0,
+      "duration": "53 min",
+      "durationAccessibility": "53 minutes",
+      "abfahrtTime": "20:34",
+      "abfahrtDate": "23.09.2019",
+      "ankunftTime": "21:27",
+      "ankunftDate": "23.09.2019",
+      "abfahrtGleis": "11",
+      "departureTrackLabelAccessibility": "platform",
+      "departureTrackLabel": "Pl.",
+      "realtimeInfo": {
+        "icon": null,
+        "detailMsg": null,
+        "cancellationMsg": null,
+        "platformChange": null,
+        "nextAlternative": null,
+        "alternativeMsg": null,
+        "isAlternative": false,
+        "abfahrtIstZeit": "20:34",
+        "abfahrtIstDatum": "23.09.2019",
+        "ankunftIstZeit": "21:27",
+        "ankunftIstDatum": "23.09.2019"
+      },
+      "belegungErste": "LOW",
+      "belegungZweite": "LOW",
+      "transportBezeichnung": {
+        "oevIcon": "ZUG",
+        "transportIcon": "IC",
+        "transportIconSuffix": "3",
+        "transportLabel": "",
+        "transportText": "584",
+        "transportName": null,
+        "transportDirection": "Basel SBB",
+        "transportLabelBgColor": null,
+        "transportLabelTextColor": null
+      },
+      "legendOccupancyItems": [
+        {
+          "code": "belegung_low",
+          "description": "low to medium occupancy",
+          "actions": []
+        },
+        {
+          "code": "belegung_high",
+          "description": "high occupancy",
+          "actions": []
+        },
+        {
+          "code": "belegung_veryhigh",
+          "description": "very high occupancy",
+          "actions": []
+        }
+      ],
+      "legendBfrItems": [],
+      "legendItems": [
+        {
+          "code": "WS",
+          "description": "Bistro",
+          "actions": []
+        },
+        {
+          "code": "FA",
+          "description": "Family Coach with play area",
+          "actions": []
+        },
+        {
+          "code": "BZ",
+          "description": "Business zone in 1st class",
+          "actions": []
+        },
+        {
+          "code": "RZ",
+          "description": "Quiet zone in 1st class",
+          "actions": []
+        },
+        {
+          "code": "R",
+          "description": "Reservation possible",
+          "actions": []
+        }
+      ],
+      "verkehrstage": [],
+      "serviceAttributes": [],
+      "verbindungId": "C1-3%3B201909232034%3B584+8503000+0000175+8500010",
+      "isInternationalVerbindung": false,
+      "zuschlagspflicht": false,
+      "angeboteUrl": "v0/verbindungsAngebote",
+      "dayDifference": "",
+      "dayDifferenceAccessibility": "",
+      "reconstructionContext": "~H4sIAAAAAAAAAN1U224aMRD9lZXhrYDsvXS9VEjAKmlQmlZNovSmqjJkAIvFi2xv0ubyR33mqU_0xzpeCIFUCVUeCwLbo5njOZ4zc01Ef6ZBmjRXFr5b0iQpqwevfMoSmviBT4PwVcRDj0c0oJR6-KMsjtwZN5TUiIZBrozVxcDKXN3jLH4u5t1O72gxt257cNhbzE-rnRZrv2t9_v1Ly8HYO-i2P7Z4FOJtQftTK4yDmLOXvP2mtbqvLVrM5-1VWFcYyLyTrouKI55EUVxGRRiYJMsol9Vd1CaL-wPz42ov9QIPP9Uqqy7mh-liXjnbq9BKul9hFJeO2x_h30kvPa2wivNZO-0dv0bTQe-t26eHlZBxHoQ3GwuP7xaK36g8MHYT3tR9FsZhnEToSCv4egZGU8AnI80v1-SqGJGmKrKshlsYLY0TYWGUa4kn0ksxRInpco8UsDTOUkynoEkTTzVyAfpSZBZ0mp87v7JiDL0KOXCms1yR5jUZ5noqrAS99lw9-e3a860YjB91de98u3Eb5voVxYBVtYVCGmRdLLw6k6rMP8C91UKZWa7t4Raxb3uOG8gRKDMYi6EFVdJfse1KlFiOHpMC9BVkaPpwgseZlghhBaDk_BrpC42AGoao6TFINA5FZuC2tgbaF1OZ_fDSHMl5l9KOvVkmfnhCg9hC3-88QA__Bb1bGKnAGO8qV-BJ5TFjvUEmjNkC735-Dvj7QoLdgXz8LORjMKAvhGtgb5YbI_sZbMM-QOWPo369RR2MnSaMhSzbLuN9498LcpcaJ3muz6USpSKuSYZ-tnAuYdxw8yKOUWC5Gq2svLGcJxgp-kMx1m4Yueav06TuB6eMN4OwSWkD0V-45sBMhJoUamjvmm-U4UTEqLJtykNnYgsks7RtPNyBKFCvFqSqo95Ro4VS-GA7uOEA3cELGcSMbfGKGwkNI59t8lqm-0j2f-e-mflme-4qxKrXn0oYR3BI-YOE3YgO-RMJb9Ulafrxg7rcUeF_c-HE6awPwxz0OWicOaZTlvrd3hl6Xyyn3P8lO6SznMj_Tw2f81pP34gD6A_qzi_G1ggAAA==",
+      "verbindungAbpreisContext": "QzEtMzsyMDE5MDkyMzIwMzQ7NTg0IDg1MDMwMDAgMDAwMDE3NSA4NTAwMDEw",
+      "ticketingInfo": {
+        "dialogTitle": "Ticket purchase not available",
+        "dialogMessage": "You have selected a connection that is in the past. Please choose another connection.",
+        "buttonText": "Ticket purchase not available",
+        "isAvailable": false
+      }
+    },
+    {
+      "verbindungSections": [
+        {
+          "abfahrtTime": "20:36",
+          "abfahrtDatum": "23.09.2019",
+          "abfahrtName": "Zürich HB",
+          "abfahrtGleis": "18",
+          "departureTrackLabelAccessibility": "platform",
+          "departureTrackLabel": "Pl.",
+          "abfahrtKoordinaten": {
+            "longitude": 8540193,
+            "latitude": 47378177
+          },
+          "transportBezeichnung": {
+            "oevIcon": "ZUG",
+            "transportIcon": "IR",
+            "transportIconSuffix": "36",
+            "transportLabel": "",
+            "transportText": "1986",
+            "transportName": null,
+            "transportDirection": "Basel SBB",
+            "transportLabelBgColor": null,
+            "transportLabelTextColor": null
+          },
+          "previewType": "NONE",
+          "transportServiceAttributes": [
+            "TT"
+          ],
+          "transportHinweis": "",
+          "belegungErste": "LOW",
+          "belegungZweite": "HIGH",
+          "type": "TRANSPORT",
+          "actionUrl": "v1/zuglauf/25875/0/85/8503000/2019-09-23/20-36?von=Z%C3%BCrich+HB&nach=Basel+SBB",
+          "formationUrl": "v1/trains/~H4sIAAAAAAAAAN2WS2_bOBCA_4pA-7Z2QIqkRLkw4AfSxkgfQGIEuy16YBxaFixTAUW1RRP_mz3u2ac9uX9sh5ZjOwr82BwLAx5yPCPONzPU-AHJ23ujkryfaat-WNRCfdJkb3xMIhz51Mc0eEMiEXiCY4oxXkmOmZOgiNaSl9LH6z1ZSUwwaiCjRpnOrSlGNsn09qDlP8tFrzv4sFxYt7y4HCwXw3q3TTqf2p9__WuS0cS76HX-bAvOIBza-avNQhoKEojO-_Y6no5sE1901m49mavUu-45r5CLiPNw5cXBMYpKLxfVk9cu5nZDWFgfXHk08DyvXif15eKyv1zUbs5ruNZ_WyMYRNetP8DX9aA_rJGas9kYnV-9A9XF4KNb9y9rjAhBg8etiHD4JDB8SMDLH_kjf2y681kYccoecQ3yl6t4piBpqPXlAf0sYtTSRZo2YKniUjmVVsWZSWCHBlfgouWsXDsIVz6nK2YzZVDLbRvomzLfZWqV6Wd3zhS7vBAwK5KRU91kGrUe0DgzM2kTZTaW67zPN5Yf5Wiy19Qle75zGoT7FToCSmsLDSRoUzE4Ok30CoG6cK2ROr_PjL2swqkkVjofTeTYKr3iX-MOk9QmOvbANdFgOC2U-alS98sQtvcmgcdYqaD5SAPdSgMPNWoM7T9RCSjHMs3V_OscIpy4aHOr0vT5Edu-3KbqWJ6mWWbuEi1X0T6gFOxs4UxYeObaOQwBPdPxWivOynYHT3k7lhPj7orrzSaOmj4dEtGiQQvjM3j6H65sEInU00KP7VNnxCncaPAiAq033aktAKbUzRsbnp68U_oUFLjyR1BYGDC_QkJxGETBARLu7yOpGpKK4RMjfYlInxGaIo697rsTIN377BikwIJXKX0shL-_XlELn0YJhngPpf-S0t-lfAtdOT0NkR9B5DikjFYQMYFSsgOIUKLTEEn4ykJeW5Xo5vWvv0dTuOQnda0bSMdoGQkweUYbnkVMCBIdoPX5ibQ-20PLXtKyXdoreCXpsUpPu55u4h4D5cQnVdAw8gnnB0BpNf59oJS-EnR3ABzFLKfJ4XqGDIsKpvsnwMQuZvme3AfD_l-Pwry4VeNMmTtlYKrl3VUiP53fgPW3co7-XuMDcMqZ__vU8DXZOnwi_JH4Dxx3kLVeCwAA/formation?tnr=25875&cicle=0&puic=85&abDatum=2019-09-23",
+          "durationProzent": "100",
+          "ankunftTime": "21:47",
+          "ankunftDatum": "23.09.2019",
+          "ankunftName": "Basel SBB",
+          "ankunftGleis": "3",
+          "arrivalTrackLabelAccessibility": "platform",
+          "arrivalTrackLabel": "Pl.",
+          "ankunftKoordinaten": {
+            "longitude": 7589548,
+            "latitude": 47547408
+          },
+          "realtimeInfo": {
+            "abfahrtIstZeit": "20:36",
+            "abfahrtIstDatum": "23.09.2019",
+            "ankunftIstZeit": "21:47",
+            "ankunftIstDatum": "23.09.2019",
+            "abfahrtPlatformChange": false,
+            "ankunftPlatformChange": false,
+            "abfahrtCancellation": false,
+            "ankunftCancellation": false,
+            "abfahrtDelayUndefined": false,
+            "ankunftDelayUndefined": false
+          },
+          "abfahrtPlatformChange": false,
+          "ankunftPlatformChange": false,
+          "abfahrtCancellation": false,
+          "ankunftCancellation": false
+        }
+      ],
+      "abfahrt": "Zürich HB",
+      "ankunft": "Basel SBB",
+      "vias": null,
+      "transfers": 0,
+      "duration": "1 h 11 min",
+      "durationAccessibility": "1 hours and 11 minutes",
+      "abfahrtTime": "20:36",
+      "abfahrtDate": "23.09.2019",
+      "ankunftTime": "21:47",
+      "ankunftDate": "23.09.2019",
+      "abfahrtGleis": "18",
+      "departureTrackLabelAccessibility": "platform",
+      "departureTrackLabel": "Pl.",
+      "realtimeInfo": {
+        "icon": null,
+        "detailMsg": null,
+        "cancellationMsg": null,
+        "platformChange": null,
+        "nextAlternative": null,
+        "alternativeMsg": null,
+        "isAlternative": false,
+        "abfahrtIstZeit": "20:36",
+        "abfahrtIstDatum": "23.09.2019",
+        "ankunftIstZeit": "21:47",
+        "ankunftIstDatum": "23.09.2019"
+      },
+      "belegungErste": "LOW",
+      "belegungZweite": "HIGH",
+      "transportBezeichnung": {
+        "oevIcon": "ZUG",
+        "transportIcon": "IR",
+        "transportIconSuffix": "36",
+        "transportLabel": "",
+        "transportText": "1986",
+        "transportName": null,
+        "transportDirection": "Basel SBB",
+        "transportLabelBgColor": null,
+        "transportLabelTextColor": null
+      },
+      "legendOccupancyItems": [
+        {
+          "code": "belegung_low",
+          "description": "low to medium occupancy",
+          "actions": []
+        },
+        {
+          "code": "belegung_high",
+          "description": "high occupancy",
+          "actions": []
+        },
+        {
+          "code": "belegung_veryhigh",
+          "description": "very high occupancy",
+          "actions": []
+        }
+      ],
+      "legendBfrItems": [],
+      "legendItems": [
+        {
+          "code": "TT",
+          "description": "Tilting train",
+          "actions": []
+        }
+      ],
+      "verkehrstage": [],
+      "serviceAttributes": [],
+      "verbindungId": "C1-4%3B201909232036%3B1986+8503000+8503504+8500309+8500305+8500320+8500301+8500010",
+      "isInternationalVerbindung": false,
+      "zuschlagspflicht": false,
+      "angeboteUrl": "v0/verbindungsAngebote",
+      "dayDifference": "",
+      "dayDifferenceAccessibility": "",
+      "reconstructionContext": "~H4sIAAAAAAAAAN2WS2_bOBCA_4pA-7Z2QIqkRLkw4AfSxkgfQGIEuy16YBxaFixTAUW1RRP_mz3u2ac9uX9sh5ZjOwr82BwLAx5yPCPONzPU-AHJ23ujkryfaat-WNRCfdJkb3xMIhz51Mc0eEMiEXiCY4oxXkmOmZOgiNaSl9LH6z1ZSUwwaiCjRpnOrSlGNsn09qDlP8tFrzv4sFxYt7y4HCwXw3q3TTqf2p9__WuS0cS76HX-bAvOIBza-avNQhoKEojO-_Y6no5sE1901m49mavUu-45r5CLiPNw5cXBMYpKLxfVk9cu5nZDWFgfXHk08DyvXif15eKyv1zUbs5ruNZ_WyMYRNetP8DX9aA_rJGas9kYnV-9A9XF4KNb9y9rjAhBg8etiHD4JDB8SMDLH_kjf2y681kYccoecQ3yl6t4piBpqPXlAf0sYtTSRZo2YKniUjmVVsWZSWCHBlfgouWsXDsIVz6nK2YzZVDLbRvomzLfZWqV6Wd3zhS7vBAwK5KRU91kGrUe0DgzM2kTZTaW67zPN5Yf5Wiy19Qle75zGoT7FToCSmsLDSRoUzE4Ok30CoG6cK2ROr_PjL2swqkkVjofTeTYKr3iX-MOk9QmOvbANdFgOC2U-alS98sQtvcmgcdYqaD5SAPdSgMPNWoM7T9RCSjHMs3V_OscIpy4aHOr0vT5Edu-3KbqWJ6mWWbuEi1X0T6gFOxs4UxYeObaOQwBPdPxWivOynYHT3k7lhPj7orrzSaOmj4dEtGiQQvjM3j6H65sEInU00KP7VNnxCncaPAiAq033aktAKbUzRsbnp68U_oUFLjyR1BYGDC_QkJxGETBARLu7yOpGpKK4RMjfYlInxGaIo697rsTIN377BikwIJXKX0shL-_XlELn0YJhngPpf-S0t-lfAtdOT0NkR9B5DikjFYQMYFSsgOIUKLTEEn4ykJeW5Xo5vWvv0dTuOQnda0bSMdoGQkweUYbnkVMCBIdoPX5ibQ-20PLXtKyXdoreCXpsUpPu55u4h4D5cQnVdAw8gnnB0BpNf59oJS-EnR3ABzFLKfJ4XqGDIsKpvsnwMQuZvme3AfD_l-Pwry4VeNMmTtlYKrl3VUiP53fgPW3co7-XuMDcMqZ__vU8DXZOnwi_JH4Dxx3kLVeCwAA",
+      "verbindungAbpreisContext": "QzEtNDsyMDE5MDkyMzIwMzY7MTk4NiA4NTAzMDAwIDg1MDM1MDQgODUwMDMwOSA4NTAwMzA1IDg1MDAzMjAgODUwMDMwMSA4NTAwMDEw",
+      "ticketingInfo": {
+        "dialogTitle": null,
+        "dialogMessage": null,
+        "buttonText": null,
+        "isAvailable": true
+      }
+    }
+  ],
+  "legendOccupancyItems": [
+    {
+      "code": "belegung_low",
+      "description": "low to medium occupancy",
+      "actions": []
+    },
+    {
+      "code": "belegung_high",
+      "description": "high occupancy",
+      "actions": []
+    },
+    {
+      "code": "belegung_veryhigh",
+      "description": "very high occupancy",
+      "actions": []
+    }
+  ],
+  "legendItems": [
+    {
+      "code": "RR",
+      "description": "reservation is obligatory",
+      "actions": []
+    }
+  ],
+  "legendBfrItems": [],
+  "abfahrt": {
+    "displayName": "Zürich HB",
+    "externalId": "8503000",
+    "type": "STATION",
+    "longitude": 8540193,
+    "latitude": 47378177,
+    "barriereFreiheit": "VORANMELDUNG"
+  },
+  "ankunft": {
+    "displayName": "Basel SBB",
+    "externalId": "8500010",
+    "type": "STATION",
+    "longitude": 7589548,
+    "latitude": 47547408,
+    "barriereFreiheit": "VORANMELDUNG"
+  },
+  "earlierUrl": "v1/verbindungen/scroll?origin=8503000&destination=8500010&scrollContext=2%7COB%7CMT%C2%B511%C2%B5418800%C2%B5418800%C2%B5418853%C2%B5418853%C2%B50%C2%B50%C2%B585%C2%B5418780%C2%B51%C2%B5-2147479534%C2%B50%C2%B51%C2%B52%7CPDH%C2%B59a94da4cac11dec860991ddf8122d6a1%7CRD%C2%B523092019%7CRT%C2%B5194000%7CUS%C2%B50",
+  "laterUrl": "v1/verbindungen/scroll?origin=8503000&destination=8500010&scrollContext=2%7COF%7CMT%C2%B511%C2%B5418836%C2%B5418836%C2%B5418907%C2%B5418907%C2%B50%C2%B50%C2%B5165%C2%B5418835%C2%B55%C2%B5-2147479534%C2%B50%C2%B51%C2%B52%7CPDH%C2%B59a94da4cac11dec860991ddf8122d6a1%7CRD%C2%B523092019%7CRT%C2%B5194000%7CUS%C2%B50",
+  "verbindungPreisUrl": "v0/verbindungenPreise"
+}

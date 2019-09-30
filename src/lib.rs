@@ -57,7 +57,7 @@ fn make_request(path: &str) -> Result<Response, reqwest::Error> {
         .expect("Unable to parse User-Agent as HeaderValue"));
     let client = reqwest::Client::builder()
         .add_root_certificate(
-            Certificate::from_pem(
+            Certificate::from_der(
                 include_bytes!("../resources/ca_cert.crt"))
                 .expect("Unable to decode certificate")
         )
@@ -77,7 +77,7 @@ fn make_request(path: &str) -> Result<Response, reqwest::Error> {
 
 
     let mut request = reqwest::Request::new(Method::GET, url);
-    let mut headers: &mut HeaderMap = request.headers_mut();
+    let headers: &mut HeaderMap = request.headers_mut();
     set_headers(headers, &path, &date);
     client.execute(request)
 }

@@ -1,7 +1,8 @@
 pub mod results;
-mod verbindung;
-mod koordinaten;
-mod transport;
-mod realtime_info;
-mod legend;
-mod ticketing;
+pub mod verbindung;
+pub mod koordinaten;
+pub mod transport;
+pub mod realtime_info;
+pub mod legend;
+pub mod ticketing;
+pub mod location;

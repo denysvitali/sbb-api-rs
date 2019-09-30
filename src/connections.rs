@@ -41,5 +41,6 @@ pub fn test_get_connection() {
                                "Basel",
                                LocationType::Station,
                                &date);
+    assert!(conn.verbindungen.len() > 0);
     println!("Connections = {:?}", conn);
 }

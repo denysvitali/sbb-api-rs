@@ -1,3 +1,5 @@
+use core::fmt;
+
 #[derive(Serialize, Deserialize, Debug)]
 pub struct TransportBezeichnung {
     #[serde(rename = "oevIcon")]
@@ -26,4 +28,10 @@ pub struct TransportBezeichnung {
 
     #[serde(rename = "transportText")]
     pub transport_text : String,
+}
+
+impl fmt::Display for TransportBezeichnung {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{} - {}", self.transport_label, self.transport_text)
+    }
 }

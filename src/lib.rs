@@ -69,13 +69,6 @@ fn make_request(path: &str) -> Result<Response, reqwest::Error> {
 
     let url = Url::parse(&format!("{}{}", API_ENDPOINT, path))
                     .expect("Unable to parse URL");
-
-    println!("URL PATH is={:?}, Path is: {}", url.path(), path);
-
-    /*let path = utf8_percent_encode(&url.path().to_owned(), CONTROLS).to_string();
-    println!("Path is now: {}", path);*/
-
-
     let mut request = reqwest::Request::new(Method::GET, url);
     let headers: &mut HeaderMap = request.headers_mut();
     set_headers(headers, &path, &date);
@@ -84,7 +77,7 @@ fn make_request(path: &str) -> Result<Response, reqwest::Error> {
 
 pub fn generate_token() -> String {
     let mut bytes = [0; 16];
-    rand_bytes(&mut bytes);
+    let _ = rand_bytes(&mut bytes);
     uuid::builder::Builder::from_slice(&bytes)
         .expect("Unable to get UUID from bytes")
         .build()

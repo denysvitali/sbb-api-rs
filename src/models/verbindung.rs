@@ -4,6 +4,10 @@ use crate::models::transport::TransportBezeichnung;
 use crate::models::realtime_info::{SectionRealtimeInfo, RealtimeInfo};
 use crate::models::legend::{LegendOccupancy, LegendItem};
 use crate::models::ticketing::TicketingInfo;
+use core::fmt;
+use chrono::prelude::*;
+use std::sync::mpsc::channel;
+use std::time::Duration;
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Verbindung {
@@ -92,7 +96,7 @@ pub struct Verbindung {
     pub verbindung_id: String,
  
    #[serde(rename = "verbindungSections")]
-    pub verbindung_sections: Vec<VerbindungSections>,
+    pub verbindung_sections: Vec<VerbindungSection>,
  
    #[serde(rename = "verkehrstage")]
     pub verkehrstage: Vec<String>,
@@ -105,7 +109,7 @@ pub struct Verbindung {
 }
 
 #[derive(Serialize, Deserialize, Debug)]
-pub struct VerbindungSections {
+pub struct VerbindungSection {
     #[serde(rename = "abfahrtCancellation")]
     pub abfahrt_cancellation: bool,
 
@@ -192,4 +196,52 @@ pub struct VerbindungSections {
 
     #[serde(rename = "type")]
     pub verbindung_type: String,
+}
+
+impl fmt::Display for Verbindung {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        let mut verbindungen= String::new();
+        for vs in self.verbindung_sections.as_slice() {
+            verbindungen = format!("{}, {}", verbindungen, vs)
+        }
+
+        write!(f, "{} ({}): {}", self.transport_bezeichnung, self.duration, verbindungen)
+    }
+}
+
+impl fmt::Display for VerbindungSection {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{} {} {} - {} {}",
+                match &self.transport_bezeichnung {
+                    Some(t) => format!("{}", t),
+                    None => String::new()
+                },
+                self.abfahrt_name,
+                self.abfahrt_time,
+                self.ankunft_name,
+                self.ankunft_time)
+    }
+}
+
+impl Verbindung {
+    pub fn duration(&self) -> Duration {
+        let abfahrt_date = NaiveDateTime::parse_from_str(
+            &format!("{} {}", self.abfahrt_date, self.abfahrt_time),
+            "%d.%m.%Y %H:%M"
+        ).unwrap();
+
+        let ankunft_date = NaiveDateTime::parse_from_str(
+            &format!("{} {}", self.ankunft_date, self.ankunft_time),
+            "%d.%m.%Y %H:%M"
+        ).unwrap();
+
+        let diff_secs = ankunft_date.timestamp() - abfahrt_date.timestamp();
+        Duration::from_secs(diff_secs as u64)
+    }
+}
+
+impl AsRef<Verbindung> for Verbindung {
+    fn as_ref(&self) -> &Verbindung {
+        return self
+    }
 }

@@ -13,7 +13,7 @@ pub fn get_authorization<'a>(path: &str, date: &str) -> String {
     let mut signer = Signer::new(MessageDigest::sha1(), &key).unwrap();
 
     let digest = format!("{}{}", path, date);
-    signer.update(digest.as_bytes());
+    let _ = signer.update(digest.as_bytes());
 
     base64::encode(&signer.sign_to_vec().expect("Unable to sign"))
 }

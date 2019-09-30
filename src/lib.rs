@@ -2,6 +2,7 @@ extern crate openssl;
 extern crate hex;
 extern crate uuid;
 extern crate chrono;
+extern crate percent_encoding;
 
 #[macro_use]
 extern crate more_asserts;
@@ -12,6 +13,8 @@ extern crate serde;
 use serde::{Deserialize, Serialize};
 pub mod authenticator;
 pub mod connections;
+pub mod models;
+
 
 use std::str::FromStr;
 use reqwest::{Certificate, Method, Url, Request, Response};
@@ -20,8 +23,7 @@ use reqwest::header::{HeaderMap, USER_AGENT, HeaderValue, HeaderName};
 use openssl::rand::rand_bytes;
 use std::borrow::{BorrowMut, Borrow};
 use chrono::{DateTime, Local};
-
-mod models;
+use percent_encoding::{CONTROLS, utf8_percent_encode};
 
 pub const API_ENDPOINT : &str = "https://p1.sbbmobile.ch";
 //const API_ENDPOINT: &str = "http://127.0.0.1:3000";
@@ -56,8 +58,7 @@ fn make_request(path: &str) -> Result<Response, reqwest::Error> {
     let client = reqwest::Client::builder()
         .add_root_certificate(
             Certificate::from_pem(
-                &fs::read("./resources/ca_cert.crt")
-                    .expect("Certificate file not found"))
+                include_bytes!("../resources/ca_cert.crt"))
                 .expect("Unable to decode certificate")
         )
         .default_headers(headers)
@@ -68,16 +69,16 @@ fn make_request(path: &str) -> Result<Response, reqwest::Error> {
 
     let url = Url::parse(&format!("{}{}", API_ENDPOINT, path))
                     .expect("Unable to parse URL");
-    println!("URL is: {}", url);
 
-    let path = url.path().to_owned();
+    println!("URL PATH is={:?}, Path is: {}", url.path(), path);
+
+    /*let path = utf8_percent_encode(&url.path().to_owned(), CONTROLS).to_string();
+    println!("Path is now: {}", path);*/
+
 
     let mut request = reqwest::Request::new(Method::GET, url);
     let mut headers: &mut HeaderMap = request.headers_mut();
     set_headers(headers, &path, &date);
-
-    println!("Request: Headers = {:?}, Path = {}", request.headers(), path);
-
     client.execute(request)
 }
 
@@ -98,15 +99,41 @@ mod tests {
     #[test]
     fn test_path_1() {
         let path = "/unauth/ticketingservice/zvs/v0/features";
-        assert_eq!("WdfnzdQugRFUF5b812hZl3lAahM=", authenticator::get_certificate_hash());
+        assert_eq!("qGkCalmIy1kRb4iJVBDQ/bhAnOQ=", authenticator::get_certificate_hash());
 
         assert_eq!(authenticator::get_authorization(path, "2019-09-05"), "wqhPBCfC9oc8gp62FVVIiNIADzg=");
+    }
+
+    #[test]
+    fn test_path_a() {
+        let path = "/unauth/fahrplanservice/v1/standorte/ba/";
+        assert_eq!(authenticator::get_authorization(path, "2019-09-23"), "qGkCalmIy1kRb4iJVBDQ/bhAnOQ=");
+    }
+
+
+
+    #[test]
+    fn test_path_b() {
+        let path = "/unauth/fahrplanservice/v1/verbindungen/a/8001 Zürich, Stampfenbachstrasse 1/s/Basel/ab/2019-09-23/22-42/";
+        assert_eq!(authenticator::get_authorization(path, "2019-09-23"), "isgBYXvgx3mlcBiqPWmTAk/2G3o=" );
+    }
+
+    #[test]
+    fn test_path_c() {
+        let path = "/unauth/fahrplanservice/v1/standorte/Basel/";
+        assert_eq!(authenticator::get_authorization(path, "2019-09-23"), "ZwdcDbK99hYBpZ3vhKB9gLOeazw=" );
     }
 
     #[test]
     fn test_path_2() {
         let path = "/unauth/ticketingservice/zvs/v0/ghettobox/";
         assert_eq!(authenticator::get_authorization(path, "2019-09-05"), "3fgUyXQoMieevNYULWbo3OPsd4w=");
+    }
+
+    #[test]
+    fn test_path_3() {
+        let path = "/unauth/fahrplanservice/v1/standorte/a%20b/";
+        assert_eq!(authenticator::get_authorization(path, "2019-09-23"), "myZVEyS8WprlVrTIw2ZynzS0Z6I=");
     }
 
     #[test]

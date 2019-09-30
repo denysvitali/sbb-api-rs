@@ -8,7 +8,6 @@ static KEY : &str = "c3eAd3eC3a7845dE98f73942b3d5f9c0";
 
 pub fn get_authorization<'a>(path: &str, date: &str) -> String {
     let hmac_key = get_key();
-    println!("HMAC KEY: {}",&hmac_key);
     let key = PKey::hmac(hmac_key.as_bytes()).unwrap();
     let mut signer = Signer::new(MessageDigest::sha1(), &key).unwrap();
 

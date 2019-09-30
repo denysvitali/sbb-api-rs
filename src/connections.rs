@@ -21,15 +21,17 @@ pub fn get_connections(from: &str, from_type: LocationType, to: &str, to_type: L
                            time);
     let path = format!("{}{}", base_path, addition);
 
-    println!("Path is: {}", path);
     let mut resp = make_request(&path).expect("Invalid request");
     let response = &resp.text().unwrap();
 
-    println!("Response is {}", response);
-
     serde_json::from_str(
         response
-    ).unwrap()
+    ).unwrap_or(VerbindungenResults{
+        verbindungen: vec![],
+        eralier_url: None,
+        late_url: None,
+        verbindung_preis_url: "".to_string()
+    })
 }
 
 
@@ -39,6 +41,18 @@ pub fn test_get_connection() {
     let conn = get_connections("Zürich HB",
                                LocationType::Station,
                                "Basel",
+                               LocationType::Station,
+                               &date);
+    assert!(conn.verbindungen.len() > 0);
+    println!("Connections = {:?}", conn);
+}
+
+#[test]
+pub fn test_get_connection2() {
+    let date = Utc.ymd(2019, 9, 28).and_hms(12, 0, 0);
+    let conn = get_connections("Chiasso",
+                               LocationType::Station,
+                               "Zürich HB",
                                LocationType::Station,
                                &date);
     assert!(conn.verbindungen.len() > 0);

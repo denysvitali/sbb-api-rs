@@ -41,3 +41,56 @@ fn parse_verbindungen_2(){
 
     assert_gt!(vr.verbindungen.len(), 0);
 }
+
+#[test]
+fn parse_verbindungen_3(){
+    let f = fs::read("./resources/test/verbindungen-3.json")
+        .expect("File not found");
+
+    let vr : VerbindungenResults = serde_json::from_str(
+        std::str::from_utf8(&f)
+            .expect("Unable to parse file into string"))
+        .expect("Unable to decode from JSON");
+
+    assert_gt!(vr.verbindungen.len(), 0);
+
+    for v in vr.verbindungen {
+        println!("{}", v);
+    }
+}
+
+#[test]
+fn parse_verbindungen_4(){
+    let f = fs::read("./resources/test/verbindungen-4.json")
+        .expect("File not found");
+
+    let vr : VerbindungenResults = serde_json::from_str(
+        std::str::from_utf8(&f)
+            .expect("Unable to parse file into string"))
+        .expect("Unable to decode from JSON");
+
+    assert_gt!(vr.verbindungen.len(), 0);
+
+    for v in vr.verbindungen {
+        println!("{}", v);
+    }
+}
+
+#[test]
+fn parse_verbindungen_5(){
+    let f = fs::read("./resources/test/verbindungen-5.json")
+        .expect("File not found");
+
+    let vr : VerbindungenResults = serde_json::from_str(
+        std::str::from_utf8(&f)
+            .expect("Unable to parse file into string"))
+        .expect("Unable to decode from JSON");
+
+    assert_gt!(vr.verbindungen.len(), 0);
+
+    assert!(vr.verbindungen[0].duration().as_secs() == (2 * 60 + 47)*60);
+
+    for v in vr.verbindungen {
+        println!("{:?} {}", v.as_ref().duration(), v);
+    }
+}

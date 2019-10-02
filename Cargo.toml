@@ -1,5 +1,5 @@
 [package]
-name = "sbb-api-rs"
+name = "sbb-api"
 version = "0.1.0"
 authors = ["Denys Vitali <denys@denv.it>"]
 edition = "2018"

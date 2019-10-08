@@ -1,0 +1,168 @@
+{
+  "verbindungSections": [
+    {
+      "abfahrtTime": "10:32",
+      "abfahrtDatum": "20.09.2019",
+      "abfahrtName": "Zürich HB",
+      "abfahrtGleis": "32",
+      "departureTrackLabelAccessibility": "platform",
+      "departureTrackLabel": "Pl.",
+      "abfahrtKoordinaten": {
+        "longitude": 8540193,
+        "latitude": 47378177
+      },
+      "transportBezeichnung": {
+        "oevIcon": "ZUG",
+        "transportIcon": "IC",
+        "transportIconSuffix": "1",
+        "transportLabel": "",
+        "transportText": "714",
+        "transportName": null,
+        "transportDirection": "Genève-Aéroport",
+        "transportLabelBgColor": null,
+        "transportLabelTextColor": null
+      },
+      "previewType": "NONE",
+      "transportServiceAttributes": [
+        "WR",
+        "FA",
+        "BZ",
+        "RZ",
+        "R"
+      ],
+      "transportHinweis": "",
+      "belegungErste": "LOW",
+      "belegungZweite": "HIGH",
+      "type": "TRANSPORT",
+      "actionUrl": "v1/zuglauf/25459/0/85/8503000/2019-09-20/10-32?von=Z%C3%BCrich+HB&nach=Bern",
+      "formationUrl": "v1/trains/~H4sIAAAAAAAAAN1U227aQBD9FWvhrYB2bYNtKiTAygWladQkSm-qqoUMsMKs0e46aXP5n1bqM099Ij_WWUy4VSlVHgPCuzvMnJ0zMz63hHcnCoSOU2ngmyF1ErMyfe1SFtEIn9RzXwfMd8Iq9SilDv4o81x7DnBLSkRBL5XaqKxnRCpXOLNfs2m71TmeTY3dHh51ZtPzYqvBmieNTw-_legNncN280MjrPp4m9f82PADLwhZLWy-aSzua_IGc8PmIqwNSmJA4HsRc10bUIv8ECPygGAtYJ3A6oB_FTuxwxz8FIusOJsexbNp4WKvQAvxfoFRXFp2f4yPs058XmAF67N02js9QNNh563dx0cFn9lU7taWWvi4UPyGVXsKI_-O3ZVd5gd-EFU9_44WsHIaBmPAcpH651tykw1IXWZJUsItDHLjiBsYpErgiXRiDJF8nO-RA7bFWrLxGBSp46lErkBd88SAitNL6zfvFkOvTPSs6SKVpH5L-qkacyNALT0X5b5fer7lveGTrkHuurwNc_2Cg4AdNZlEGuQA5MOPKyi3Hn6qdJIqgykkQs552HSM4lJb-9EGwa97liOIAUjdG_K-ATkvw4L1KWjDMwy1cKMM1A0kaH5_iseJEghjOODosRLpcoWgCvo420MQaOzzRMN9aQm2z8ci-e7EKRJ1roUZOpOEf3e4Ar6Bvt_aQvf_B72daSFBa-cmleAI6TBtnF7Ctd4Ab396Dvi7TIDZgXz6LGSsMKgrbl9kZ5JqLboJbMJuoYZPo365x5kY2vnQBpJks5UrAVgN567JHKWpuhSSz6filiToZzLr4gcVqxtBgEOWysHCGlZyXcFI3u3zobKiZJWgTKOyS89pWPfcOqUVRH9Fcy3jcpTJvnl8EQcJKiNGeS5ZHFojkyGZ3Lbebz6UCEpp-cygII5gFy3U0B2UWFTzNhkFlVoYeTV_nVGe6BN5_531Rs6opv9R_WBX9WsVK8JudSvXXKT_ketGM6K6G24145FF9W8aVWKHqwv9FNQlKBQd3Zr392TvAr2vcpl7WbOGdHJJfhHte06h_n0jCs4fcP5_Ns4IAAA%3D/formation?tnr=25459&cicle=0&puic=85&abDatum=2019-09-20",
+      "durationProzent": "100",
+      "ankunftTime": "11:28",
+      "ankunftDatum": "20.09.2019",
+      "ankunftName": "Bern",
+      "ankunftGleis": "5",
+      "arrivalTrackLabelAccessibility": "platform",
+      "arrivalTrackLabel": "Pl.",
+      "ankunftKoordinaten": {
+        "longitude": 7439122,
+        "latitude": 46948825
+      },
+      "realtimeInfo": {
+        "abfahrtIstZeit": "10:32",
+        "abfahrtIstDatum": "20.09.2019",
+        "ankunftIstZeit": "11:28",
+        "ankunftIstDatum": "20.09.2019",
+        "abfahrtDelayUndefined": false,
+        "abfahrtPlatformChange": false,
+        "ankunftCancellation": false,
+        "ankunftDelayUndefined": false,
+        "ankunftPlatformChange": false,
+        "abfahrtCancellation": false
+      },
+      "abfahrtPlatformChange": false,
+      "ankunftPlatformChange": false,
+      "abfahrtCancellation": false,
+      "ankunftCancellation": false
+    }
+  ],
+  "abfahrt": "Zürich HB",
+  "ankunft": "Bern",
+  "vias": null,
+  "transfers": 0,
+  "duration": "56 min",
+  "durationAccessibility": "56 minutes",
+  "abfahrtTime": "10:32",
+  "abfahrtDate": "20.09.2019",
+  "ankunftTime": "11:28",
+  "ankunftDate": "20.09.2019",
+  "abfahrtGleis": "32",
+  "departureTrackLabelAccessibility": "platform",
+  "departureTrackLabel": "Pl.",
+  "realtimeInfo": {
+    "icon": null,
+    "detailMsg": null,
+    "cancellationMsg": null,
+    "platformChange": null,
+    "nextAlternative": null,
+    "alternativeMsg": null,
+    "isAlternative": false,
+    "abfahrtIstZeit": "10:32",
+    "abfahrtIstDatum": "20.09.2019",
+    "ankunftIstZeit": "11:28",
+    "ankunftIstDatum": "20.09.2019"
+  },
+  "belegungErste": "LOW",
+  "belegungZweite": "HIGH",
+  "transportBezeichnung": {
+    "oevIcon": "ZUG",
+    "transportIcon": "IC",
+    "transportIconSuffix": "1",
+    "transportLabel": "",
+    "transportText": "714",
+    "transportName": null,
+    "transportDirection": "Genève-Aéroport",
+    "transportLabelBgColor": null,
+    "transportLabelTextColor": null
+  },
+  "legendOccupancyItems": [
+    {
+      "code": "belegung_low",
+      "description": "low to medium occupancy",
+      "actions": []
+    },
+    {
+      "code": "belegung_high",
+      "description": "high occupancy",
+      "actions": []
+    },
+    {
+      "code": "belegung_veryhigh",
+      "description": "very high occupancy",
+      "actions": []
+    }
+  ],
+  "legendBfrItems": [],
+  "legendItems": [
+    {
+      "code": "WR",
+      "description": "Restaurant",
+      "actions": []
+    },
+    {
+      "code": "FA",
+      "description": "Family Coach with play area",
+      "actions": []
+    },
+    {
+      "code": "BZ",
+      "description": "Business zone in 1st class",
+      "actions": []
+    },
+    {
+      "code": "RZ",
+      "description": "Quiet zone in 1st class",
+      "actions": []
+    },
+    {
+      "code": "R",
+      "description": "Reservation possible",
+      "actions": []
+    }
+  ],
+  "verkehrstage": [],
+  "serviceAttributes": [],
+  "verbindungId": "C1-0%3B201909201032%3B714+8503000+0000132+8507000",
+  "isInternationalVerbindung": false,
+  "zuschlagspflicht": false,
+  "angeboteUrl": "v0/verbindungsAngebote",
+  "dayDifference": "",
+  "dayDifferenceAccessibility": "",
+  "reconstructionContext": "~H4sIAAAAAAAAAN1U227aQBD9FWvhrYB2bYNtKiTAygWladQkSm-qqoUMsMKs0e46aXP5n1bqM099Ij_WWUy4VSlVHgPCuzvMnJ0zMz63hHcnCoSOU2ngmyF1ErMyfe1SFtEIn9RzXwfMd8Iq9SilDv4o81x7DnBLSkRBL5XaqKxnRCpXOLNfs2m71TmeTY3dHh51ZtPzYqvBmieNTw-_legNncN280MjrPp4m9f82PADLwhZLWy-aSzua_IGc8PmIqwNSmJA4HsRc10bUIv8ECPygGAtYJ3A6oB_FTuxwxz8FIusOJsexbNp4WKvQAvxfoFRXFp2f4yPs058XmAF67N02js9QNNh563dx0cFn9lU7taWWvi4UPyGVXsKI_-O3ZVd5gd-EFU9_44WsHIaBmPAcpH651tykw1IXWZJUsItDHLjiBsYpErgiXRiDJF8nO-RA7bFWrLxGBSp46lErkBd88SAitNL6zfvFkOvTPSs6SKVpH5L-qkacyNALT0X5b5fer7lveGTrkHuurwNc_2Cg4AdNZlEGuQA5MOPKyi3Hn6qdJIqgykkQs552HSM4lJb-9EGwa97liOIAUjdG_K-ATkvw4L1KWjDMwy1cKMM1A0kaH5_iseJEghjOODosRLpcoWgCvo420MQaOzzRMN9aQm2z8ci-e7EKRJ1roUZOpOEf3e4Ar6Bvt_aQvf_B72daSFBa-cmleAI6TBtnF7Ctd4Ab396Dvi7TIDZgXz6LGSsMKgrbl9kZ5JqLboJbMJuoYZPo365x5kY2vnQBpJks5UrAVgN567JHKWpuhSSz6filiToZzLr4gcVqxtBgEOWysHCGlZyXcFI3u3zobKiZJWgTKOyS89pWPfcOqUVRH9Fcy3jcpTJvnl8EQcJKiNGeS5ZHFojkyGZ3Lbebz6UCEpp-cygII5gFy3U0B2UWFTzNhkFlVoYeTV_nVGe6BN5_531Rs6opv9R_WBX9WsVK8JudSvXXKT_ketGM6K6G24145FF9W8aVWKHqwv9FNQlKBQd3Zr392TvAr2vcpl7WbOGdHJJfhHte06h_n0jCs4fcP5_Ns4IAAA=",
+  "verbindungAbpreisContext": "QzEtMDsyMDE5MDkyMDEwMzI7NzE0IDg1MDMwMDAgMDAwMDEzMiA4NTA3MDAw",
+  "ticketingInfo": {
+    "dialogTitle": "Ticket purchase not available",
+    "dialogMessage": "You have selected a connection that is in the past. Please choose another connection.",
+    "buttonText": "Ticket purchase not available",
+    "isAvailable": false
+  }
+}

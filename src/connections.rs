@@ -28,7 +28,7 @@ pub fn get_connections(from: &str, from_type: LocationType, to: &str, to_type: L
         response
     ).unwrap_or(VerbindungenResults{
         verbindungen: vec![],
-        eralier_url: None,
+        earlier_url: None,
         late_url: None,
         verbindung_preis_url: "".to_string()
     })
@@ -57,4 +57,34 @@ pub fn test_get_connection2() {
                                &date);
     assert!(conn.verbindungen.len() > 0);
     println!("Connections = {:?}", conn);
+}
+
+#[test]
+pub fn test_get_connections3() {
+    let date = Utc.ymd(2019, 10, 8).and_hms(21,31,0);
+    let conn = get_connections("Zürich HB",
+            LocationType::Station,
+            "Dübendorf, Bahnof",
+            LocationType::Station,
+            &date
+    );
+
+    println!("Connections = {}", conn);
+}
+
+#[test]
+pub fn test_get_connections4() {
+    let date = Utc.ymd(2019, 10, 9).and_hms(8, 0, 0);
+    let conn = get_connections("Chiasso",
+            LocationType::Address,
+            "Zürich",
+            LocationType::Address,
+            &date
+    );
+
+    println!("Connections = {}", conn);
+
+    for c in conn.verbindungen {
+        println!("Conn: {}, Duration = {:?}", c, c.duration());
+    }
 }

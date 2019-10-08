@@ -8,6 +8,12 @@ use core::fmt;
 use chrono::prelude::*;
 use std::sync::mpsc::channel;
 use std::time::Duration;
+use onig::Regex;
+use std::str::FromStr;
+
+use mockall::*;
+use mockall::predicate::*;
+use std::fs;
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Verbindung {
@@ -225,18 +231,20 @@ impl fmt::Display for VerbindungSection {
 
 impl Verbindung {
     pub fn duration(&self) -> Duration {
-        let abfahrt_date = NaiveDateTime::parse_from_str(
-            &format!("{} {}", self.abfahrt_date, self.abfahrt_time),
-            "%d.%m.%Y %H:%M"
-        ).unwrap();
+        let duration = &self.duration;
+        let re = Regex::new(r"^(?:(\d+) h|)(?: |)(?:(\d+) min|)$").unwrap();
 
-        let ankunft_date = NaiveDateTime::parse_from_str(
-            &format!("{} {}", self.ankunft_date, self.ankunft_time),
-            "%d.%m.%Y %H:%M"
-        ).unwrap();
+        if !re.is_match(duration) {
+            return Duration::from_millis(0)
+        }
 
-        let diff_secs = ankunft_date.timestamp() - abfahrt_date.timestamp();
-        Duration::from_secs(diff_secs as u64)
+        for cap in re.captures_iter(duration) {
+            return Duration::from_secs(
+                u64::from_str(cap.at(1).unwrap_or("")).unwrap_or(0)*60*60
+                    + u64::from_str(cap.at(2).unwrap_or("")).unwrap_or(0)*60);
+        }
+
+        return Duration::from_millis(1)
     }
 }
 
@@ -245,3 +253,30 @@ impl AsRef<Verbindung> for Verbindung {
         return self
     }
 }
+
+#[test]
+fn test_verbindung_duration() {
+    let f = fs::read("./resources/test/verbindung-1.json")
+        .expect("File not found");
+
+    let vr : Verbindung = serde_json::from_str(
+        std::str::from_utf8(&f)
+        .expect("Unable to parse file into string"))
+        .expect("Unable to decode from JSON");
+
+    assert_eq!(Duration::from_secs(56 * 60), vr.duration())
+}
+
+#[test]
+fn test_verbindung_duration_2() {
+    let f = fs::read("./resources/test/verbindung-2.json")
+        .expect("File not found");
+
+    let vr : Verbindung = serde_json::from_str(
+        std::str::from_utf8(&f)
+        .expect("Unable to parse file into string"))
+        .expect("Unable to decode from JSON");
+
+    assert_eq!(Duration::from_secs(1 * 60 * 60 + 5 * 60), vr.duration())
+}
+

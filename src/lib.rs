@@ -3,6 +3,7 @@ extern crate hex;
 extern crate uuid;
 extern crate chrono;
 extern crate percent_encoding;
+extern crate onig;
 
 #[macro_use]
 extern crate more_asserts;

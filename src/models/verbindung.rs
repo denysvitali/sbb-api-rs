@@ -5,15 +5,11 @@ use crate::models::realtime_info::{SectionRealtimeInfo, RealtimeInfo};
 use crate::models::legend::{LegendOccupancy, LegendItem};
 use crate::models::ticketing::TicketingInfo;
 use core::fmt;
-use chrono::prelude::*;
-use std::sync::mpsc::channel;
 use std::time::Duration;
 use onig::Regex;
 use std::str::FromStr;
 
-use mockall::*;
 use mockall::predicate::*;
-use std::fs;
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Verbindung {
@@ -254,29 +250,36 @@ impl AsRef<Verbindung> for Verbindung {
     }
 }
 
-#[test]
-fn test_verbindung_duration() {
-    let f = fs::read("./resources/test/verbindung-1.json")
-        .expect("File not found");
+#[cfg(test)]
+mod test {
+    use std::fs;
 
-    let vr : Verbindung = serde_json::from_str(
-        std::str::from_utf8(&f)
-        .expect("Unable to parse file into string"))
-        .expect("Unable to decode from JSON");
+    use std::time::Duration;
+    use crate::models::verbindung::Verbindung;
 
-    assert_eq!(Duration::from_secs(56 * 60), vr.duration())
+    #[test]
+    fn test_verbindung_duration() {
+        let f = fs::read("./resources/test/verbindung-1.json")
+            .expect("File not found");
+    
+        let vr : Verbindung = serde_json::from_str(
+            std::str::from_utf8(&f)
+            .expect("Unable to parse file into string"))
+            .expect("Unable to decode from JSON");
+    
+        assert_eq!(Duration::from_secs(56 * 60), vr.duration())
+    }
+    
+    #[test]
+    fn test_verbindung_duration_2() {
+        let f = fs::read("./resources/test/verbindung-2.json")
+            .expect("File not found");
+    
+        let vr : Verbindung = serde_json::from_str(
+            std::str::from_utf8(&f)
+            .expect("Unable to parse file into string"))
+            .expect("Unable to decode from JSON");
+    
+        assert_eq!(Duration::from_secs(1 * 60 * 60 + 5 * 60), vr.duration())
+    }
 }
-
-#[test]
-fn test_verbindung_duration_2() {
-    let f = fs::read("./resources/test/verbindung-2.json")
-        .expect("File not found");
-
-    let vr : Verbindung = serde_json::from_str(
-        std::str::from_utf8(&f)
-        .expect("Unable to parse file into string"))
-        .expect("Unable to decode from JSON");
-
-    assert_eq!(Duration::from_secs(1 * 60 * 60 + 5 * 60), vr.duration())
-}
-

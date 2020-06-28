@@ -1,5 +1,4 @@
-use std::fs;
-use openssl::x509::*;
+use openssl::x509::X509;
 use openssl::hash::{MessageDigest, DigestBytes, Hasher};
 use openssl::sign::Signer;
 use openssl::pkey::PKey;
@@ -39,16 +38,23 @@ pub fn get_key() -> String {
     retrieve_key(&get_certificate_hash(), KEY)
 }
 
-#[test]
-fn url_1(){
-    let date = "2019-09-20";
-    let auth = "T/jxDVIsjL+ByTSYY2oKOtkV7b4=";
-    let path = "/unauth/fahrplanservice/v1/verbindungen/s/Z%25C3%25BCrich%2520HB/s/Bern/ab/2019-09-20/21-14/";
+#[cfg(test)]
+mod test {
+    use crate::authenticator::{get_authorization, get_certificate_hash};
 
-    assert_eq!(auth, get_authorization(path, date));
+    #[test]
+    fn url_1(){
+        let date = "2020-06-28";
+        let auth = "hL89gUidDebOUNUCP/+5vbj+0Iw=";
+        let path = "/unauth/fahrplanservice/v1/verbindungen/s/Z%25C3%25BCrich%2520HB/s/Bern/ab/2019-09-20/21-14/";
+
+        assert_eq!(get_authorization(path, date), auth);
+    }
+
+    #[test]
+    fn test_certificate_hash(){
+        assert_eq!("WdfnzdQugRFUF5b812hZl3lAahM=", get_certificate_hash());
+    }
+
 }
 
-#[test]
-fn test_certificate_hash(){
-    assert_eq!("WdfnzdQugRFUF5b812hZl3lAahM=", get_certificate_hash());
-}

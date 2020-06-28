@@ -6,29 +6,30 @@ extern crate percent_encoding;
 extern crate onig;
 
 #[macro_use]
-extern crate more_asserts;
-
-#[macro_use]
 extern crate serde;
 
-use serde::{Deserialize, Serialize};
+#[macro_use]
+extern crate simple_error;
+
+
+#[cfg(test)]
+#[macro_use]
+extern crate more_asserts;
+
 pub mod authenticator;
 pub mod connections;
 pub mod models;
 
 
 use std::str::FromStr;
-use reqwest::{Certificate, Method, Url, Request, Response};
-use std::fs;
+use reqwest::{Certificate, Method, Url, Response};
 use reqwest::header::{HeaderMap, USER_AGENT, HeaderValue, HeaderName};
 use openssl::rand::rand_bytes;
-use std::borrow::{BorrowMut, Borrow};
 use chrono::{DateTime, Local};
-use percent_encoding::{CONTROLS, utf8_percent_encode};
 
 pub const API_ENDPOINT : &str = "https://p1.sbbmobile.ch";
 //const API_ENDPOINT: &str = "http://127.0.0.1:3000";
-pub const SBB_UA: &str = "SBBmobile/flavorpreviewRelease-9.6.2-RELEASE Android/9 (OnePlus;ONEPLUS A5010)";
+pub const SBB_UA: &str = "SBBmobile/flavorProdRelease-10.8.1 Android/10 (OnePlus;ONEPLUS A5010)";
 
 pub fn set_headers(headers: &mut HeaderMap, path: &str, date: &str){
     headers.append(HeaderName::from_str("X-App-Token")
@@ -93,12 +94,11 @@ mod tests {
     #[test]
     fn test_path_1() {
         let path = "/unauth/ticketingservice/zvs/v0/features";
-        assert_eq!("qGkCalmIy1kRb4iJVBDQ/bhAnOQ=", authenticator::get_certificate_hash());
-
+        assert_eq!(authenticator::get_certificate_hash(), "WdfnzdQugRFUF5b812hZl3lAahM=");
         assert_eq!(authenticator::get_authorization(path, "2019-09-05"), "wqhPBCfC9oc8gp62FVVIiNIADzg=");
     }
 
-    #[test]
+    /*#[test]
     fn test_path_a() {
         let path = "/unauth/fahrplanservice/v1/standorte/ba/";
         assert_eq!(authenticator::get_authorization(path, "2019-09-23"), "qGkCalmIy1kRb4iJVBDQ/bhAnOQ=");
@@ -187,5 +187,5 @@ mod tests {
         let mut resp = make_request(path).expect("Invalid request");
 
         println!("{}", resp.text().expect("Unable to extract text"))
-    }
+    }*/
 }

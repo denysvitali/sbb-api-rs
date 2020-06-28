@@ -1,5 +1,4 @@
 use core::fmt;
-use std::fmt::Formatter;
 
 pub enum LocationType {
     Address,

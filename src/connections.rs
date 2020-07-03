@@ -56,7 +56,8 @@ pub fn test_get_connection() {
 
 #[test]
 pub fn test_get_connection2() {
-    let date = Utc.ymd(2019, 9, 28).and_hms(12, 0, 0);
+    let today = chrono::offset::Local::now();
+    let date = Utc.ymd(today.year(),  today.month(), today.day()).and_hms(12, 0, 0);
     let conn = get_connections("Chiasso",
                                LocationType::Station,
                                "Zürich HB",
@@ -71,7 +72,8 @@ pub fn test_get_connection2() {
 
 #[test]
 pub fn test_get_connections3() {
-    let date = Utc.ymd(2019, 10, 8).and_hms(21, 31, 0);
+    let today = chrono::offset::Local::now();
+    let date = Utc.ymd(today.year(),  today.month(), today.day()).and_hms(12, 0, 0);
     let conn = get_connections("Zürich HB",
                                LocationType::Station,
                                "Dübendorf, Bahnof",
@@ -85,7 +87,8 @@ pub fn test_get_connections3() {
 
 #[test]
 pub fn test_get_connections4() {
-    let date = Utc.ymd(2020, 10, 9).and_hms(8, 0, 0);
+    let today = chrono::offset::Local::now();
+    let date = Utc.ymd(today.year(),  today.month(), today.day()).and_hms(12, 0, 0);
     let conn = get_connections("Chiasso",
                                LocationType::Address,
                                "Zürich",

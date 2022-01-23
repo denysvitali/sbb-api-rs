@@ -63,7 +63,7 @@ pub struct Verbindung {
     pub duration_accessibility: String,
  
    #[serde(rename = "isInternationalVerbindung")]
-    pub is_international_verbindung: bool,
+    pub is_international_verbindung: Option<bool>,
  
    #[serde(rename = "legendBfrItems")]
     pub legend_bfr_items: Vec<String>,
@@ -268,6 +268,7 @@ mod test {
     use std::fs;
 
     use std::time::Duration;
+    use crate::models::results::VerbindungenResults;
     use crate::models::verbindung::Verbindung;
 
     #[test]
@@ -294,5 +295,18 @@ mod test {
             .expect("Unable to decode from JSON");
     
         assert_eq!(Duration::from_secs(1 * 60 * 60 + 5 * 60), vr.duration())
+    }
+
+    #[test]
+    fn test_decode_verbindung() {
+        let f = fs::read("./resources/test/verbindungen-6.json")
+            .expect("File not found");
+
+        let vr : VerbindungenResults = serde_json::from_str(
+            std::str::from_utf8(&f)
+                .expect("Unable to parse file into string"))
+            .expect("Unable to decode from JSON");
+
+        println!("Verbindungen = {:?}", vr)
     }
 }

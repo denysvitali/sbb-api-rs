@@ -10,6 +10,7 @@ use std::str::FromStr;
 
 use mockall::predicate::*;
 use regex::bytes::Regex;
+use regex::Match;
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Verbindung {
@@ -225,6 +226,15 @@ impl fmt::Display for VerbindungSection {
     }
 }
 
+fn cap_to_u64(m: Option<regex::bytes::Match>) -> u64 {
+    if m.is_none() {
+        return 0;
+    }
+
+    let s = std::str::from_utf8(m.unwrap().as_bytes()).unwrap_or(&"");
+    return u64::from_str(s).unwrap_or(0);
+}
+
 impl Verbindung {
     pub fn duration(&self) -> Duration {
         let duration = &self.duration;
@@ -235,17 +245,12 @@ impl Verbindung {
         }
 
         for cap in re.captures_iter(duration.as_bytes()) {
-            let hours_str = String::from_utf8(
-                Vec::from(cap.get(1).unwrap().as_bytes())
-            ).unwrap_or(String::new());
-            let minutes_str = String::from_utf8(
-                Vec::from(cap.get(2).unwrap().as_bytes())
-            ).unwrap_or(String::new());
+            println!("cap={:?}", cap);
+            let hours = cap_to_u64(cap.get(1));
+            let minutes = cap_to_u64(cap.get(2));
 
 
-            return Duration::from_secs(
-                u64::from_str(&hours_str).unwrap_or(0)*60*60
-                    + u64::from_str(&minutes_str).unwrap_or(0)*60);
+            return Duration::from_secs(hours*60*60 + minutes*60);
         }
 
         return Duration::from_millis(1)

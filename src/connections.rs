@@ -1,11 +1,12 @@
-use chrono::{Utc, TimeZone, Datelike};
-use crate::models::results::VerbindungenResults;
-use crate::make_request;
-use crate::models::location::LocationType;
+use chrono::{Datelike, TimeZone, Utc};
 use simple_error::SimpleError;
 
+use crate::make_request;
+use crate::models::location::LocationType;
+use crate::models::results::VerbindungenResults;
+
 pub async fn get_connections(from: &str, from_type: LocationType, to: &str, to_type: LocationType,
-                       on: &chrono::DateTime<Utc>) -> Result<VerbindungenResults, SimpleError> {
+                             on: &chrono::DateTime<Utc>) -> Result<VerbindungenResults, SimpleError> {
     let base_path = "/unauth/fahrplanservice/v1/verbindungen/";
 
     // s/Zurich/s/Bern/ab/2019-09-20/10-14/";
@@ -20,10 +21,10 @@ pub async fn get_connections(from: &str, from_type: LocationType, to: &str, to_t
                            time);
     let path = format!("{}{}", base_path, addition);
 
-    let mut resp = make_request(&path).await.expect("Invalid request");
+    let resp = make_request(&path).await.expect("Invalid request");
 
     if !resp.status().is_success() {
-       bail!("status is not success")
+        bail!("status is not success")
     }
 
     let response = &resp.text().await.unwrap();
@@ -42,7 +43,7 @@ pub async fn get_connections(from: &str, from_type: LocationType, to: &str, to_t
 #[actix_rt::test]
 pub async fn test_get_connection() {
     let today = chrono::offset::Local::now();
-    let date = Utc.ymd(today.year(),  today.month(), today.day()).and_hms(12, 0, 0);
+    let date = Utc.ymd(today.year(), today.month(), today.day()).and_hms(12, 0, 0);
     let conn = get_connections("Zürich HB",
                                LocationType::Station,
                                "Basel",
@@ -58,7 +59,7 @@ pub async fn test_get_connection() {
 #[actix_rt::test]
 pub async fn test_get_connection2() {
     let today = chrono::offset::Local::now();
-    let date = Utc.ymd(today.year(),  today.month(), today.day()).and_hms(12, 0, 0);
+    let date = Utc.ymd(today.year(), today.month(), today.day()).and_hms(12, 0, 0);
     let conn = get_connections("Chiasso",
                                LocationType::Station,
                                "Zürich HB",
@@ -74,12 +75,15 @@ pub async fn test_get_connection2() {
 #[actix_rt::test]
 pub async fn test_get_connections3() {
     let today = chrono::offset::Local::now();
-    let date = Utc.ymd(today.year(),  today.month(), today.day()).and_hms(12, 0, 0);
-    let conn = get_connections("Zürich HB",
-                               LocationType::Station,
-                               "Dübendorf, Bahnof",
-                               LocationType::Station,
-                               &date,
+    let date =
+        Utc.ymd(today.year(), today.month(), today.day())
+            .and_hms(12, 0, 0);
+    let conn = get_connections(
+        "Zürich HB",
+        LocationType::Station,
+        "Dübendorf, Bahnof",
+        LocationType::Station,
+        &date,
     );
 
     let conn_res = conn.await;
@@ -91,7 +95,9 @@ pub async fn test_get_connections3() {
 #[actix_rt::test]
 pub async fn test_get_connections4() {
     let today = chrono::offset::Local::now();
-    let date = Utc.ymd(today.year(),  today.month(), today.day()).and_hms(12, 0, 0);
+    let date =
+        Utc.ymd(today.year(), today.month(), today.day())
+            .and_hms(12, 0, 0);
     let conn = get_connections("Chiasso",
                                LocationType::Address,
                                "Zürich",

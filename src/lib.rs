@@ -3,7 +3,6 @@ extern crate hex;
 extern crate uuid;
 extern crate chrono;
 extern crate percent_encoding;
-extern crate onig;
 
 #[macro_use]
 extern crate serde;
@@ -53,7 +52,7 @@ pub fn set_headers(headers: &mut HeaderMap, path: &str, date: &str){
     );
 }
 
-fn make_request(path: &str) -> Result<Response, reqwest::Error> {
+async fn make_request(path: &str) -> Result<Response, reqwest::Error> {
     let mut headers = HeaderMap::new();
     headers.append(USER_AGENT, HeaderValue::from_str(SBB_UA)
         .expect("Unable to parse User-Agent as HeaderValue"));
@@ -74,13 +73,13 @@ fn make_request(path: &str) -> Result<Response, reqwest::Error> {
     let mut request = reqwest::Request::new(Method::GET, url);
     let headers: &mut HeaderMap = request.headers_mut();
     set_headers(headers, &path, &date);
-    client.execute(request)
+    client.execute(request).await
 }
 
 pub fn generate_token() -> String {
     let mut bytes = [0; 16];
     let _ = rand_bytes(&mut bytes);
-    uuid::builder::Builder::from_slice(&bytes)
+    uuid::Builder::from_slice(&bytes)
         .expect("Unable to get UUID from bytes")
         .build()
         .to_hyphenated().to_string()

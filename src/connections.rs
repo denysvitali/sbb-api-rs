@@ -4,7 +4,7 @@ use crate::make_request;
 use crate::models::location::LocationType;
 use simple_error::SimpleError;
 
-pub fn get_connections(from: &str, from_type: LocationType, to: &str, to_type: LocationType,
+pub async fn get_connections(from: &str, from_type: LocationType, to: &str, to_type: LocationType,
                        on: &chrono::DateTime<Utc>) -> Result<VerbindungenResults, SimpleError> {
     let base_path = "/unauth/fahrplanservice/v1/verbindungen/";
 
@@ -20,13 +20,13 @@ pub fn get_connections(from: &str, from_type: LocationType, to: &str, to_type: L
                            time);
     let path = format!("{}{}", base_path, addition);
 
-    let mut resp = make_request(&path).expect("Invalid request");
+    let mut resp = make_request(&path).await.expect("Invalid request");
 
     if !resp.status().is_success() {
        bail!("status is not success")
     }
 
-    let response = &resp.text().unwrap();
+    let response = &resp.text().await.unwrap();
 
     Ok(serde_json::from_str(
         response
@@ -39,8 +39,8 @@ pub fn get_connections(from: &str, from_type: LocationType, to: &str, to_type: L
 }
 
 
-#[test]
-pub fn test_get_connection() {
+#[actix_rt::test]
+pub async fn test_get_connection() {
     let today = chrono::offset::Local::now();
     let date = Utc.ymd(today.year(),  today.month(), today.day()).and_hms(12, 0, 0);
     let conn = get_connections("Zürich HB",
@@ -48,14 +48,15 @@ pub fn test_get_connection() {
                                "Basel",
                                LocationType::Station,
                                &date);
-    assert!(conn.is_ok());
-    let verbindungen_res = conn.unwrap();
+    let conn_res = conn.await;
+    assert!(conn_res.is_ok());
+    let verbindungen_res = conn_res.unwrap();
     assert!(verbindungen_res.verbindungen.len() > 0);
     println!("Connections = {:?}", verbindungen_res);
 }
 
-#[test]
-pub fn test_get_connection2() {
+#[actix_rt::test]
+pub async fn test_get_connection2() {
     let today = chrono::offset::Local::now();
     let date = Utc.ymd(today.year(),  today.month(), today.day()).and_hms(12, 0, 0);
     let conn = get_connections("Chiasso",
@@ -63,15 +64,15 @@ pub fn test_get_connection2() {
                                "Zürich HB",
                                LocationType::Station,
                                &date);
-    assert!(conn.is_ok());
-
-    let verbindungen_res = conn.unwrap();
+    let conn_res = conn.await;
+    assert!(conn_res.is_ok());
+    let verbindungen_res = conn_res.unwrap();
     assert!(verbindungen_res.verbindungen.len() > 0);
     println!("Connections = {:?}", verbindungen_res);
 }
 
-#[test]
-pub fn test_get_connections3() {
+#[actix_rt::test]
+pub async fn test_get_connections3() {
     let today = chrono::offset::Local::now();
     let date = Utc.ymd(today.year(),  today.month(), today.day()).and_hms(12, 0, 0);
     let conn = get_connections("Zürich HB",
@@ -81,12 +82,14 @@ pub fn test_get_connections3() {
                                &date,
     );
 
-    assert!(conn.is_ok());
-    println!("Connections = {}", conn.unwrap());
+    let conn_res = conn.await;
+    assert!(conn_res.is_ok());
+    let verbindungen_res = conn_res.unwrap();
+    println!("Connections = {}", verbindungen_res)
 }
 
-#[test]
-pub fn test_get_connections4() {
+#[actix_rt::test]
+pub async fn test_get_connections4() {
     let today = chrono::offset::Local::now();
     let date = Utc.ymd(today.year(),  today.month(), today.day()).and_hms(12, 0, 0);
     let conn = get_connections("Chiasso",
@@ -96,9 +99,9 @@ pub fn test_get_connections4() {
                                &date,
     );
 
-    assert!(conn.is_ok());
-
-    let verbindungen_res = conn.unwrap();
+    let conn_res = conn.await;
+    assert!(conn_res.is_ok());
+    let verbindungen_res = conn_res.unwrap();
     println!("Connections = {}", verbindungen_res);
 
     for c in verbindungen_res.verbindungen {

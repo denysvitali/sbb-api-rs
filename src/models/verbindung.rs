@@ -6,10 +6,10 @@ use crate::models::legend::{LegendOccupancy, LegendItem};
 use crate::models::ticketing::TicketingInfo;
 use core::fmt;
 use std::time::Duration;
-use onig::Regex;
 use std::str::FromStr;
 
 use mockall::predicate::*;
+use regex::bytes::Regex;
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Verbindung {
@@ -230,14 +230,22 @@ impl Verbindung {
         let duration = &self.duration;
         let re = Regex::new(r"^(?:(\d+) h|)(?: |)(?:(\d+) min|)$").unwrap();
 
-        if !re.is_match(duration) {
+        if !re.is_match(duration.as_bytes()) {
             return Duration::from_millis(0)
         }
 
-        for cap in re.captures_iter(duration) {
+        for cap in re.captures_iter(duration.as_bytes()) {
+            let hours_str = String::from_utf8(
+                Vec::from(cap.get(1).unwrap().as_bytes())
+            ).unwrap_or(String::new());
+            let minutes_str = String::from_utf8(
+                Vec::from(cap.get(2).unwrap().as_bytes())
+            ).unwrap_or(String::new());
+
+
             return Duration::from_secs(
-                u64::from_str(cap.at(1).unwrap_or("")).unwrap_or(0)*60*60
-                    + u64::from_str(cap.at(2).unwrap_or("")).unwrap_or(0)*60);
+                u64::from_str(&hours_str).unwrap_or(0)*60*60
+                    + u64::from_str(&minutes_str).unwrap_or(0)*60);
         }
 
         return Duration::from_millis(1)

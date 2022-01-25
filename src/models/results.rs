@@ -4,16 +4,11 @@ use serde::{Deserialize, Serialize};
 use crate::models::verbindung::Verbindung;
 
 #[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "camelCase")]
 pub struct VerbindungenResults {
     pub verbindungen: Vec<Verbindung>,
-
-    #[serde(rename = "earlierUrl")]
     pub earlier_url: Option<String>,
-
-    #[serde(rename = "lateUrl")]
     pub late_url: Option<String>,
-
-    #[serde(rename = "verbindungPreisUrl")]
     pub verbindung_preis_url: String,
 }
 

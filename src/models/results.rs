@@ -1,8 +1,6 @@
 use std::fmt::Formatter;
 
 use serde::{Deserialize, Serialize};
-use serde_json::Error;
-
 use crate::models::verbindung::Verbindung;
 
 #[derive(Serialize, Deserialize, Debug)]

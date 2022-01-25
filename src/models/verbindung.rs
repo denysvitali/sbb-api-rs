@@ -10,7 +10,6 @@ use std::str::FromStr;
 
 use mockall::predicate::*;
 use regex::bytes::Regex;
-use regex::Match;
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Verbindung {
@@ -21,7 +20,7 @@ pub struct Verbindung {
     pub abfahrt_date: String,
  
    #[serde(rename = "abfahrtGleis")]
-    pub abfahrt_gleis: String,
+    pub abfahrt_gleis: Option<String>,
  
    #[serde(rename = "abfahrtTime")]
     pub abfahrt_time: String,
@@ -120,7 +119,7 @@ pub struct VerbindungSection {
     pub abfahrt_datum: String,
 
     #[serde(rename = "abfahrtGleis")]
-    pub abfahrt_gleis: String,
+    pub abfahrt_gleis: Option<String>,
 
     #[serde(rename = "abfahrtKoordinaten")]
     pub abfahrt_koordinaten: Koordinaten,
@@ -144,7 +143,7 @@ pub struct VerbindungSection {
     pub ankunft_datum: String,
 
     #[serde(rename = "ankunftGleis")]
-    pub ankunft_gleis: String,
+    pub ankunft_gleis: Option<String>,
 
     #[serde(rename = "ankunftKoordinaten")]
     pub ankunft_koordinaten: Koordinaten,
@@ -162,7 +161,7 @@ pub struct VerbindungSection {
     pub arrival_track_label: Option<String>,
 
     #[serde(rename = "arrivalTrackLabelAccessibility")]
-    pub arrival_track_label_accessibility: String,
+    pub arrival_track_label_accessibility: Option<String>,
 
     #[serde(rename = "belegungErste")]
     pub belegung_erste: String,
@@ -174,7 +173,7 @@ pub struct VerbindungSection {
     pub departure_track_label: Option<String>,
 
     #[serde(rename = "departureTrackLabelAccessibility")]
-    pub departure_track_label_accessibility: String,
+    pub departure_track_label_accessibility: Option<String>,
 
     #[serde(rename = "durationProzent")]
     pub duration_prozent: Option<String>,
@@ -245,7 +244,6 @@ impl Verbindung {
         }
 
         for cap in re.captures_iter(duration.as_bytes()) {
-            println!("cap={:?}", cap);
             let hours = cap_to_u64(cap.get(1));
             let minutes = cap_to_u64(cap.get(2));
 
@@ -300,6 +298,19 @@ mod test {
     #[test]
     fn test_decode_verbindung() {
         let f = fs::read("./resources/test/verbindungen-6.json")
+            .expect("File not found");
+
+        let vr : VerbindungenResults = serde_json::from_str(
+            std::str::from_utf8(&f)
+                .expect("Unable to parse file into string"))
+            .expect("Unable to decode from JSON");
+
+        println!("Verbindungen = {:?}", vr)
+    }
+
+    #[test]
+    fn test_decode_verbindung_7() {
+        let f = fs::read("./resources/test/verbindungen-7.json")
             .expect("File not found");
 
         let vr : VerbindungenResults = serde_json::from_str(

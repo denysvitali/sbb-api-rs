@@ -88,8 +88,6 @@ pub fn generate_token() -> String {
 #[cfg(test)]
 mod tests {
     use super::authenticator;
-    use crate::make_request;
-
     #[test]
     fn test_path_1() {
         let path = "/unauth/ticketingservice/zvs/v0/features";

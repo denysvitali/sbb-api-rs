@@ -1,5 +1,7 @@
 [package]
 name = "sbb-api"
+description = "A library to interact with sbb.ch's unofficial API"
+license = "MIT"
 version = "0.1.0"
 authors = ["Denys Vitali <denys@denv.it>"]
 edition = "2021"

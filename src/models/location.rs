@@ -1,19 +1,17 @@
 use core::fmt;
 
-pub enum LocationType {
-    Address,
-    Station
+/// Search date/time interpretation for connection queries.
+#[derive(Debug, Clone, Copy)]
+pub enum SearchDateTimeType {
+    Departure,
+    Arrival,
 }
 
-impl fmt::Display for LocationType {
+impl fmt::Display for SearchDateTimeType {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        match *self {
-            LocationType::Address=> {
-                write!(f, "a")
-            },
-            LocationType::Station => {
-                write!(f, "s")
-            }
+        match self {
+            SearchDateTimeType::Departure => write!(f, "DEPARTURE"),
+            SearchDateTimeType::Arrival => write!(f, "ARRIVAL"),
         }
     }
 }

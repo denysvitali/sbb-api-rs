@@ -1,139 +1,110 @@
-use chrono::{Utc};
-use simple_error::SimpleError;
+use chrono::Utc;
+use simple_error::{bail, SimpleError};
+use reqwest::Url;
 
 use crate::make_request;
-use crate::models::location::LocationType;
-use crate::models::results::VerbindungenResults;
+use crate::models::location::SearchDateTimeType;
+use crate::models::trip::TripSearchResponse;
 
-pub async fn get_connections(from: &str, from_type: LocationType, to: &str, to_type: LocationType,
-                             on: &chrono::DateTime<Utc>) -> Result<VerbindungenResults, SimpleError> {
-    let base_path = "/unauth/fahrplanservice/v1/verbindungen/";
+/// Fetch connections between two places by name.
+///
+/// `from_ref` / `to_ref` are optional UIC station IDs (e.g. `"8503000"` for Zürich HB).
+/// Providing them yields more reliable results; omit when only the name is known.
+pub async fn get_connections(
+    from: &str,
+    from_ref: Option<&str>,
+    to: &str,
+    to_ref: Option<&str>,
+    on: &chrono::DateTime<Utc>,
+    dt_type: SearchDateTimeType,
+) -> Result<TripSearchResponse, SimpleError> {
+    let date = on.format("%Y-%m-%d").to_string();
+    let time = on.format("%H:%M").to_string();
 
-    // s/Zurich/s/Bern/ab/2019-09-20/10-14/";
-    let date = on.format("%Y-%m-%d");
-    let time = on.format("%H-%M");
+    let mut params: Vec<(&str, &str)> = vec![
+        ("departureName", from),
+        ("arrivalName", to),
+        ("searchDate", &date),
+        ("searchTime", &time),
+    ];
 
-    let addition = format!("{}/{}/{}/{}/ab/{}/{}/", from_type,
-                           from,
-                           to_type,
-                           to,
-                           date,
-                           time);
-    let path = format!("{}{}", base_path, addition);
+    // dt_type is a local Display-able value; build the string before borrowing params
+    let dt_str = dt_type.to_string();
+    params.push(("searchDateTimeType", &dt_str));
 
-    let resp = make_request(&path).await.expect("Invalid request");
-
-    if !resp.status().is_success() {
-        bail!("status is not success")
+    if let Some(r) = from_ref {
+        params.push(("departureReference", r));
+    }
+    if let Some(r) = to_ref {
+        params.push(("arrivalReference", r));
     }
 
-    let response = &resp.text().await.unwrap();
+    let base_path = format!("/api/timetable/v2/trips");
+    let url = Url::parse_with_params(
+        &format!("{}{}", crate::API_ENDPOINT, base_path),
+        &params,
+    )
+    .map_err(|e| SimpleError::new(format!("URL parse error: {}", e)))?;
 
-    Ok(serde_json::from_str(
-        response
-    ).unwrap())
+    let resp = make_request(url, &base_path)
+        .await
+        .map_err(|e| SimpleError::new(format!("Request error: {}", e)))?;
+
+    if !resp.status().is_success() {
+        let status = resp.status();
+        let body = resp.text().await.unwrap_or_default();
+        bail!("HTTP {}: {}", status, body)
+    }
+
+    let text = resp
+        .text()
+        .await
+        .map_err(|e| SimpleError::new(format!("Response read error: {}", e)))?;
+
+    serde_json::from_str(&text)
+        .map_err(|e| SimpleError::new(format!("JSON parse error: {}", e)))
 }
 
+#[cfg(test)]
 mod tests {
     use chrono::{Datelike, TimeZone, Utc};
     use crate::connections::get_connections;
-    use crate::models::location::LocationType;
+    use crate::models::location::SearchDateTimeType;
 
     #[actix_rt::test]
-    pub async fn test_get_connection() {
+    #[ignore = "requires live API access"]
+    pub async fn test_get_connection_zh_bs() {
         let today = chrono::offset::Local::now();
-        let date = chrono::Utc.ymd(today.year(), today.month(), today.day()).and_hms(12, 0, 0);
-        let conn = get_connections("Zürich HB",
-                                   LocationType::Station,
-                                   "Basel",
-                                   LocationType::Station,
-                                   &date);
-        let conn_res = conn.await;
-        assert!(conn_res.is_ok());
-        let verbindungen_res = conn_res.unwrap();
-        assert!(verbindungen_res.verbindungen.len() > 0);
-        println!("Connections = {:?}", verbindungen_res);
-    }
-
-    #[actix_rt::test]
-    pub async fn test_get_connection2() {
-        let today = chrono::offset::Local::now();
-        let date = Utc.ymd(today.year(), today.month(), today.day()).and_hms(12, 0, 0);
-        let conn = get_connections("Chiasso",
-                                   LocationType::Station,
-                                   "Zürich HB",
-                                   LocationType::Station,
-                                   &date);
-        let conn_res = conn.await;
-        assert!(conn_res.is_ok());
-        let verbindungen_res = conn_res.unwrap();
-        assert!(verbindungen_res.verbindungen.len() > 0);
-        println!("Connections = {:?}", verbindungen_res);
-    }
-
-    #[actix_rt::test]
-    pub async fn test_get_connections3() {
-        let today = chrono::offset::Local::now();
-        let date =
-            Utc.ymd(today.year(), today.month(), today.day())
-                .and_hms(12, 0, 0);
-        let conn = get_connections(
-            "Zürich HB",
-            LocationType::Station,
-            "Dübendorf, Bahnof",
-            LocationType::Station,
+        let date = Utc.with_ymd_and_hms(today.year(), today.month(), today.day(), 12, 0, 0).unwrap();
+        let result = get_connections(
+            "Zürich HB", Some("8503000"),
+            "Basel SBB", Some("8500010"),
             &date,
-        );
-
-        let conn_res = conn.await;
-        assert!(conn_res.is_ok());
-        let verbindungen_res = conn_res.unwrap();
-        println!("Connections = {}", verbindungen_res)
-    }
-
-    #[actix_rt::test]
-    pub async fn test_get_connections4() {
-        let today = chrono::offset::Local::now();
-        let date =
-            Utc.ymd(today.year(), today.month(), today.day())
-                .and_hms(12, 0, 0);
-        let conn = get_connections("Chiasso",
-                                   LocationType::Address,
-                                   "Zürich",
-                                   LocationType::Address,
-                                   &date,
-        );
-
-        let conn_res = conn.await;
-        assert!(conn_res.is_ok());
-        let verbindungen_res = conn_res.unwrap();
-        println!("Connections = {}", verbindungen_res);
-
-        for c in verbindungen_res.verbindungen {
-            println!("Conn: {}, Duration = {:?}", c, c.duration());
+            SearchDateTimeType::Departure,
+        )
+        .await;
+        assert!(result.is_ok(), "error: {:?}", result.err());
+        let resp = result.unwrap();
+        assert!(!resp.trips.is_empty());
+        println!("Got {} trips", resp.trips.len());
+        for trip in &resp.trips {
+            println!("{:?}", trip.summary.departure_anchor.display_time);
         }
     }
 
     #[actix_rt::test]
-    pub async fn test_get_connections5() {
+    #[ignore = "requires live API access"]
+    pub async fn test_get_connection_by_name_only() {
         let today = chrono::offset::Local::now();
-        let date =
-            Utc.ymd(today.year(), today.month(), today.day())
-                .and_hms(12, 0, 0);
-        let conn = get_connections("Im Tiergraten, 8055 Zürich, Zürich",
-                                   LocationType::Address,
-                                   "8005 Zürich, Hardturmstrasse 3",
-                                   LocationType::Address,
-                                   &date,
-        );
-
-        let conn_res = conn.await;
-        assert!(conn_res.is_ok());
-        let verbindungen_res = conn_res.unwrap();
-        println!("Connections = {}", verbindungen_res);
-
-        for c in verbindungen_res.verbindungen {
-            println!("Conn: {}, Duration = {:?}", c, c.duration());
-        }
+        let date = Utc.with_ymd_and_hms(today.year(), today.month(), today.day(), 12, 0, 0).unwrap();
+        let result = get_connections(
+            "Zürich HB", None,
+            "Bern", None,
+            &date,
+            SearchDateTimeType::Departure,
+        )
+        .await;
+        assert!(result.is_ok(), "error: {:?}", result.err());
+        println!("Trips: {}", result.unwrap().trips.len());
     }
 }

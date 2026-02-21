@@ -2,24 +2,21 @@
 name = "sbb-api"
 description = "A library to interact with sbb.ch's unofficial API"
 license = "MIT"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Denys Vitali <denys@denv.it>"]
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+clap = { version = "4", features = ["derive"] }
+tokio = { version = "1", features = ["time"] }
 actix-rt = "2"
-openssl = "0.10"
-base64 = "0.13"
-hex = "0.4"
-reqwest = "0.11"
-uuid = "0.8"
+reqwest = { version = "0.11", features = ["json"] }
 chrono = "0.4"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-percent-encoding = "2"
-more-asserts = "0"
-mockall = "0.11.0"
-regex = "1"
 simple-error = "0.2.3"
+uuid = { version = "1", features = ["v4"] }
+openssl = "0.10"
+base64 = "0.21"

@@ -1,60 +1,31 @@
-use openssl::x509::X509;
-use openssl::hash::{MessageDigest, DigestBytes, Hasher};
+
+use chrono::Local;
+use openssl::hash::MessageDigest;
 use openssl::sign::Signer;
 use openssl::pkey::PKey;
-static KEY : &str = "c3eAd3eC3a7845dE98f73942b3d5f9c0";
+use uuid::Uuid;
 
+/// HMAC key for the vnext API (from SBB Android app)
+const HMAC_KEY: &str = r#"GY>b+.[0]S@b~f!2;4MU&GK<xQpO#;mG>"VuxE^,nh~Ev6!_cr\[rL'zL5<qX'D]"#;
 
-pub fn get_authorization<'a>(path: &str, date: &str) -> String {
-    let hmac_key = get_key();
-    let key = PKey::hmac(hmac_key.as_bytes()).unwrap();
-    let mut signer = Signer::new(MessageDigest::sha1(), &key).unwrap();
-
-    let digest = format!("{}{}", path, date);
-    let _ = signer.update(digest.as_bytes());
-
-    base64::encode(&signer.sign_to_vec().expect("Unable to sign"))
+/// Generate a random UUID for the X-APP-TOKEN header.
+pub fn generate_app_token() -> String {
+    Uuid::new_v4().to_string()
 }
 
-pub fn get_certificate_hash() -> String {
-    let cert = X509::from_der(
-        include_bytes!("../resources/ca_cert.crt")
-    ).expect("Invalid CA certificate");
-
-    let r : DigestBytes = cert.digest(MessageDigest::sha1()).expect("Digest");
-    base64::encode(&r)
+/// Get current date in YYYY-MM-DD format for X-API-DATE header.
+pub fn get_date() -> String {
+    Local::now().format("%Y-%m-%d").to_string()
 }
 
-pub fn retrieve_key(cert_hash: &str, key: &str) -> String {
-    let mut hasher : Hasher = Hasher::new(MessageDigest::sha256()).expect("Unable to initialize hasher");
+/// Compute HMAC-SHA1 signature for the API authorization.
+/// Data: path + date, Key: HMAC_KEY, Base64 encoded result.
+pub fn get_authorization(path: &str, date: &str) -> String {
+    let key = PKey::hmac(HMAC_KEY.as_bytes()).expect("Invalid HMAC key");
+    let mut signer = Signer::new(MessageDigest::sha1(), &key).expect("Unable to create signer");
 
-    let cleartext = format!("{}{}", cert_hash, key);
-    hasher.update(cleartext.as_bytes()).expect("Failed to update hasher");
-    let bytes = hasher.finish().expect("Unable to hash!");
-    hex::encode(bytes)
+    let data = format!("{}{}", path, date);
+    signer.update(data.as_bytes()).expect("Failed to update HMAC");
+
+    base64::Engine::encode(&base64::engine::general_purpose::STANDARD, &signer.sign_to_vec().expect("HMAC sign failed"))
 }
-
-pub fn get_key() -> String {
-    retrieve_key(&get_certificate_hash(), KEY)
-}
-
-#[cfg(test)]
-mod test {
-    use crate::authenticator::{get_authorization, get_certificate_hash};
-
-    #[test]
-    fn url_1(){
-        let date = "2020-06-28";
-        let auth = "hL89gUidDebOUNUCP/+5vbj+0Iw=";
-        let path = "/unauth/fahrplanservice/v1/verbindungen/s/Z%25C3%25BCrich%2520HB/s/Bern/ab/2019-09-20/21-14/";
-
-        assert_eq!(get_authorization(path, date), auth);
-    }
-
-    #[test]
-    fn test_certificate_hash(){
-        assert_eq!("WdfnzdQugRFUF5b812hZl3lAahM=", get_certificate_hash());
-    }
-
-}
-
